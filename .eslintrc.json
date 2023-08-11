@@ -1,0 +1,16 @@
+{
+  "plugins": ["prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-multi-spaces": ["error"],
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

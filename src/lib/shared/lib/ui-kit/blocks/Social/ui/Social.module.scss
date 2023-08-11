@@ -1,0 +1,29 @@
+@import 'lib/shared/styles/app.scss';
+
+.socialItem {
+  width: 34px;
+  height: 35px;
+
+  a {
+    display: block;
+
+    img {
+      width: 34px;
+      height: 35px;
+    }
+  }
+}
+
+.socialIcons {
+  display: grid;
+  grid-template: 1fr 1fr / repeat(4, 35px);
+  gap: 15px;
+
+  &--mini {
+    gap: 10px;
+  }
+
+  @include mediaMax($screenSm) {
+    gap: 10px;
+  }
+}

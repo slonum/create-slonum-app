@@ -1,0 +1,17 @@
+@import 'lib/shared/styles/app.scss';
+
+.blockquote {
+  margin: 0;
+  padding: 10px 0 10px 20px;
+  position: relative;
+  border-left: 5px solid $accentLineColor;
+  height: max-content;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $darkColor;
+  @include mediaMax($screenMd){
+    font-size: $fontSize14;
+  }
+}

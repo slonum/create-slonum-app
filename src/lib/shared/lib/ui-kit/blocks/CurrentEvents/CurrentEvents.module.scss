@@ -1,0 +1,59 @@
+@import 'lib/shared/styles/app.scss';
+
+.events {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  @include mediaMax($screenLg) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mediaMax($screenMd) {
+    gap: 20px;
+  }
+
+  &__card {
+    flex: 1 1 50%;
+    width: 50%;
+    height: 300px;
+    border-radius: 20px;
+
+    @include mediaMax($screenEx) {
+      width: 465px;
+      flex: 1 1 465px;
+      height: 210px;
+    }
+
+    @include mediaMax($screenLg) {
+      height: 210px;
+      flex: 0 0 auto;
+    }
+
+    @include mediaMax($screenSm) {
+      width: 320px;
+      height: 160px;
+    }
+  }
+}
+
+.currentEvents {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  &__margin {
+    margin-top: 150px;
+
+    @include mediaMax($screenEx) {
+      margin-top: 100px;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.svgStandingElephant {
+  @include mediaZr {
+    height: 170px;
+    width: 147.5px;
+  }
+}

@@ -1,0 +1,81 @@
+@import 'lib/shared/styles/app.scss';
+
+.profile {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+
+  @include mediaMin($screenLg) {
+    width: 105px;
+  }
+
+  &__iconWrapper {
+    width: 35px;
+    height: 60px;
+    padding: 0;
+    position: relative;
+    z-index: inherit;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    transition: all 0.2s;
+    flex-shrink: 0;
+
+    & svg {
+      width: 14px;
+      height: 8px;
+      transition: all 0.3s;
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &:hover svg path {
+      stroke: $darkColor;
+    }
+
+    &--draw-cab,
+    &--draw {
+      @include mediaMax($screenLg) {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &:hover,
+    &--active {
+      cursor: pointer;
+      background: $cabinetIconBackgroundColor;
+
+      & svg {
+        top: 40px;
+      }
+    }
+
+    &--words {
+      @include mediaMax($screenMd) {
+        width: 30px;
+        height: 40px;
+
+        & svg {
+          top: 16px;
+          width: 12px;
+          height: 7px;
+        }
+
+        &:hover,
+        &--active {
+          & svg {
+            top: 24px;
+          }
+        }
+      }
+    }
+  }
+}

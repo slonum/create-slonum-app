@@ -1,0 +1,105 @@
+@import 'lib/shared/styles/app.scss';
+
+.tooltip {
+  margin: 0;
+  padding: 0 !important;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  position: relative;
+
+  width: 22px;
+  height: 24px;
+
+  path {
+    transition: .2s;
+  }
+
+  &--bl {
+    right: 100%;
+    top: 100%;
+  }
+
+  &--br {
+    left: 100%;
+    top: 100%;
+  }
+
+  &--tl {
+    right: 100%;
+    bottom: 100%;
+  }
+  
+  &--tr {
+    left: 100%;
+     top: 100%;
+  }
+
+  &--r {
+    left: 100%; 
+  }
+
+  &__annotation {
+    pointer-events: none;
+    transition: .2s;
+    opacity: 0;
+    margin: 0;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 110;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__default {
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    min-height: 99px;
+    min-width: 280px;
+    background-color: $greenColor;
+    box-shadow: 0 15px 30px 0 $greenColorShadow;
+
+    text-align: center;
+
+    @include mediaMax($screenMd) {
+      min-width: 250px;
+      font-size: $fontSize14;
+      line-height: 17px;
+    }
+
+    @include mediaMax($screenSm) {
+      left: -110px;
+      bottom: 106%;
+    }
+  }
+
+  &:hover {
+    path {
+      stroke: $greenColor;
+    }
+
+    .tooltip__annotation {
+      opacity: 1;
+    }
+  }
+
+  &__annotationText {
+    color: $whiteColor;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize18;
+    min-height: 63px;
+    min-width: 250px;
+
+    @include mediaMax($screenMd) {
+      min-width: 200px;
+      min-height: 50px;
+      width: 200px;
+      font-size: $fontSize14;
+      line-height: 17px;
+    }
+
+
+  }
+}

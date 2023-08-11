@@ -1,0 +1,101 @@
+@import 'lib/shared/styles/app.scss';
+
+.onboard {
+  width: 280px;
+  position: absolute;
+  z-index: 1000;
+
+  &__container {
+    padding: 18px 15px;
+    background: $greenColor;
+    box-shadow: 0px 15px 30px $greenColorShadow;
+    border-radius: 15px;
+
+    font-family: $RubikFontFamily;
+    font-style: normal;
+    font-size: $fontSize18;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize13;
+      line-height: 15px;
+    }
+  }
+
+  &__content {
+    p {
+      font-weight: 700;
+      color: #FFFFFF !important;
+    }
+  }
+
+  &__bottom {
+    margin-top: 21px;
+    height: 24px;
+
+    button {
+      padding: 0;
+      text-transform: uppercase;
+      border: none;
+      background: none;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+  }
+
+  &__end {
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize12;
+    line-height: 1.66;
+    letter-spacing: 0.08em;
+    color: #DBDBDB !important;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize11;
+      line-height: 18px;
+    }
+  }
+
+  &__next {
+    font-family: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    gap: 5px;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize15;
+    }
+
+    svg {
+      margin-top: -2px;
+    }
+
+    path {
+      stroke: #FFFFFF;
+    }
+  }
+
+  &__icon {
+    height: 22px;
+    margin-bottom: -1px;
+    padding: 0 12px;
+
+    &--rev {
+      transform: rotate(180deg);
+      margin-bottom: 0;
+      margin-top: -2px;
+    }
+  }
+}
+
+.overlay {
+  background: #DBDBDB;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}

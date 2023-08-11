@@ -1,0 +1,13 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.svg {
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-end;
+  > * {
+    max-height: 30px;
+  }
+}

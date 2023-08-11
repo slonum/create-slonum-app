@@ -1,0 +1,112 @@
+@import 'lib/shared/styles/app.scss';
+
+.timer {
+  &__caption {
+    font-family: $NunitoFontFamily;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.66;
+    letter-spacing: 0.04em;
+    color: $grayColor;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include mediaZr {
+      padding-bottom: 5px;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include mediaZr {
+      gap: 5px;
+    }
+  }
+
+  &__dots {
+    padding-top: 14px;
+    font-family: $NunitoFontFamily;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    color: $darkColor;
+    animation: 1.5s infinite dotsTick;
+
+    @include mediaZr {
+      padding-top: 5px;
+    }
+
+    @keyframes dotsTick {
+
+      0% {
+        opacity: 0;
+      }
+
+      33% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__value {
+    min-width: 71px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 30px $grayColorShadow;
+
+    font-family: $RubikFontFamily;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0.04em;
+    color: $orangeColor;
+    text-align: center;
+
+    @include mediaZr {
+      width: 52px;
+      height: 44px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__caption {
+    margin: auto;
+    font-family: $NunitoFontFamily;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: $darkColor;
+    text-align: center;
+
+    & span {
+      display: block;
+      color: $grayColor;
+    }
+
+    @include mediaZr {
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+}

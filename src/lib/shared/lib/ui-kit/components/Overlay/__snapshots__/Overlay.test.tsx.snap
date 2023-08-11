@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overlay active 1`] = `
+<div>
+  <div
+    class="overlay"
+  />
+</div>
+`;
+
+exports[`Overlay should render successfully 1`] = `<div />`;
+
+exports[`Overlay story active 1`] = `
+<div>
+  <div
+    class="overlay story"
+  />
+</div>
+`;
+
+exports[`Overlay story should render successfully 1`] = `<div />`;

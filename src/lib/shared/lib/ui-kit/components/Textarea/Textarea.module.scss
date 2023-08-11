@@ -1,0 +1,149 @@
+@import 'lib/shared/styles/app.scss';
+
+.textarea {
+
+  &__wrapper {
+    position: relative;
+    background-color: $whiteColor;
+    max-width: 540px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    transition: margin 0.1s;
+    & .textarea__field_error {
+      padding-bottom: 1px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__field {
+    outline: none;
+    min-height: 60px;
+    max-height: 50vh;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 15px;
+    border: 1px solid $grayColor;
+    padding-left: 20px;
+    font-size: $fontSize20;
+    font-family: $RubikFontFamily;
+    line-height: 24px;
+    color: $darkGrayColor;
+
+    &:hover {
+      border: 1px solid $darkGrayColor;
+    }
+
+    &:focus {
+      border: 1px solid $darkColor;
+      color: $darkColor;
+    }
+  }
+
+  &__field_error,
+  &__field_error:hover,
+  &__field_error:focus {
+    border: 1px solid $orangeColor;
+  }
+
+  &__placeholder {
+    font-family: $RubikFontFamily;
+    overflow: visible;
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+    left: 20px;
+    top: 18px;
+    background-color: $whiteColor;
+    border-radius: 4px;
+    user-select: none;
+    padding: 0 5px;
+    transition: top 0.15s linear, font-size 0.15s linear;
+    font-size: $fontSize20;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: $darkGrayColor;
+  }
+
+
+  &__field:focus~.textarea__placeholder,
+  &__field:active~.textarea__placeholder,
+  &__field:not(:placeholder-shown)+.textarea__placeholder {
+    top: -8px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkGrayColor;
+  }
+
+  &__error {
+    z-index: 5;
+    width: 100%;
+    margin: -10px 0 0 20px;
+    display: block;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize16;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: $orangeColor;
+    position: absolute;
+    top: calc(100% + 6px);
+  }
+}
+
+@include mediaMax($screenEx) {
+  .textarea {
+    &__wrapper
+      {
+      width: 440px;
+      font-size: $fontSize14;
+    }
+
+    &__placeholder {
+      font-size: $fontSize16;
+    }
+  }
+}
+
+@include mediaMax($screenLg) {
+  .textarea {
+    &__wrapper {
+      width: 300px;
+      font-size: $fontSize14;
+      min-height: 38px;
+      margin-bottom: 20px;
+      & .textarea__field_error {
+        padding-bottom: 1px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__field {
+      min-height: 38px;
+      // width: 320px;
+      font-size: $fontSize14;
+    }
+
+    &__placeholder {
+      top: 9px;
+      font-size: $fontSize14;
+
+      &_type {
+        left: 13px;
+        top: 12px;
+        font-size: $fontSize13;
+        line-height: 15px;
+        letter-spacing: 0.04em;
+      }
+    }
+
+    &__error {
+      font-size: $fontSize9;
+      line-height: 13px;
+      top: calc(100% - 4px);
+      margin-bottom: 0px;
+      margin-top: 0;
+    }
+  }
+}

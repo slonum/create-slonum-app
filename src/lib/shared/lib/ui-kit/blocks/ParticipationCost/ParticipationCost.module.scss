@@ -1,0 +1,349 @@
+@import 'lib/shared/styles/app.scss';
+
+.participation {
+  width: 490px;
+  margin-top: -100px;
+  transition: margin 0.1s linear;
+
+  &_hoverable:hover {
+    margin-top: -120px;
+    margin-bottom: -20px;
+  }
+
+  @include mediaMax($screenEx) {
+    width: 440px;
+  }
+
+  @include mediaMax($screenLg) {
+    width: 320px;
+    border-radius: 25px;
+  }
+
+  @include mediaMax($screenMd) {
+    width: 320px;
+
+    &:hover {
+      margin-top: -100px;
+      margin-bottom: 0;
+    }
+  }
+
+  @include mediaZr {
+    width: 320px;
+  }
+
+  &--repost {
+    height: 330px;
+    margin: 0;
+    position: relative;
+
+    &:hover {
+      margin: 0;
+    }
+
+    @include mediaMax($screenMd) {
+      height: 215px;
+      max-width: 320px;
+      width: 100%;
+    }
+  }
+
+  &__top {
+    position: relative;
+  }
+
+  &__radioTick {
+    position: absolute;
+    top: 77px;
+    left: 49px;
+    cursor: pointer;
+    pointer-events: none;
+    width: 18px;
+    height: 12px;
+
+    @include mediaMax($screenMd) {
+      top: 42px;
+      left: 28px;
+    }
+
+    &--repost {
+      top: 56px;
+
+      @include mediaMax($screenLg) {
+        top: 52px;
+        left: 45px;
+        width: 15px;
+        height: 9px;
+      }
+
+      @include mediaMax($screenMd) {
+        top: 35px;
+        left: 32px;
+        width: 12px;
+        height: 8px;
+      }
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    height: 35px;
+    width: 35px;
+    appearance: none;
+
+    &::before {
+      cursor: pointer;
+      position: absolute;
+      content: '';
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: $whiteColor;
+      border: 3px solid $orangeColor;
+    }
+
+    &:checked::before {
+      border: none;
+      background-color: $orangeColor;
+    }
+
+    @include mediaMax($screenMd) {
+      top: 30px;
+      left: 20px;
+    }
+
+    &--repost {
+      top: 44px;
+
+      @include mediaMax($screenLg) {
+        &::before {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      @include mediaMax($screenMd) {
+        top: 29px;
+        left: 28px;
+
+        &::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: $fontSize20;
+    text-transform: uppercase;
+    font-family: $NunitoFontFamily;
+    font-weight: 900;
+    line-height: 27px;
+    color: $whiteColor;
+    text-align: center;
+    padding-top: 70px;
+    letter-spacing: 0.05em;
+
+    @include mediaMax($screenEx) {
+      font-size: $fontSize14;
+    }
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize14;
+      line-height: 19px;
+      padding-top: 40px;
+    }
+
+    &--repost {
+      padding-top: 48px;
+
+      @include mediaMax($screenMd) {
+        padding-top: 30px;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  &__wrapper {
+    height: 408px;
+    width: 100%;
+    background: url('./assets/reg-to-take-part-bg_1.webp') rgba(0, 0, 0, 0.7);
+    background-size: cover;
+    background-position: 0 -78px;
+    background-blend-mode: multiply;
+    position: relative;
+    border-radius: 40px;
+
+    @include mediaMax($screenLg) {
+      height: 257px;
+      background-position: 0 -51px;
+    }
+
+    &--repost {
+      height: 330px;
+      top: 0;
+      transition: all .2s;
+
+      background: url('./assets/reg-to-take-part-repost-bg.webp') rgba(0, 0, 0, 0);
+      background-size:cover;
+      background-position: 0 -15px;
+      background-blend-mode: multiply;
+      // background-repeat: no-repeat;
+
+      &:hover {
+
+        top: -9px;
+        box-shadow: 0px 15px 30px rgba(40, 45, 50, 0.3);
+      }
+
+      @include mediaMax($screenMd) {
+        height: 215px;
+      }
+    }
+  }
+
+  &__wrapper_noRepost {
+    background: url('./assets/reg-to-take-part-no-repost-bg_1.webp') rgba(0, 0, 0, 0.7);
+    background-size: cover;
+  }
+
+  &__content {
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: baseline;
+    gap: 26px;
+
+    @include mediaMax($screenLg) {
+      padding-top: 30px;
+    }
+
+    @include mediaMax($screenMd) {
+      gap: 48px;
+    }
+
+    &--repost {
+      padding: 30px 40px 29px 40px;
+      justify-content: flex-start;
+
+      @include mediaMax($screenMd) {
+        padding: 20px 26px 16px 26px;
+      }
+
+      & p:first-child {
+        font-size: fontSizePointNumberCabinet;
+        line-height: 50px;
+      }
+    }
+  }
+
+  &__or {
+    font-family: $RubikFontFamily;
+    color: $whiteColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: $fontSize20;
+    line-height: 27px;
+    margin: 0;
+    margin-top: 10px;
+
+    @include mediaMax($screenLg) {
+      display: none;
+    }
+  }
+
+  &__price {
+    font-family: $RubikFontFamily;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__priceNum {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize64;
+    color: $orangeColor;
+    letter-spacing: -0.04em;
+    margin: 0;
+    white-space: nowrap;
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize40;
+      line-height: 47px;
+    }
+  }
+
+  &__priceText {
+    max-width: 154px;
+    text-align: center;
+    color: $whiteColor;
+    font-size: $fontSize18;
+    line-height: 21px;
+    letter-spacing: 0.08em;
+    margin: 0;
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize13;
+      line-height: 15px;
+    }
+
+    @include mediaMax($screenMd) {
+      max-width: 110px;
+    }
+  }
+
+  &__repostLinks {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: $greenColor;
+    height: 78px;
+    border-radius: 0 0 40px 40px;
+    display: flex;
+    align-items: center;
+    padding: 23px 92px 27px;
+
+    @include mediaMax($screenEx) {
+      padding: 15px 40px 17px 80px;
+    }
+
+    @include mediaMax($screenLg) {
+      height: 51px;
+      padding: 15px 40px 17px 41px;
+    }
+  }
+
+  &__repostText {
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize20;
+    font-weight: 700;
+    line-height: 27px;
+    color: $whiteColor;
+    letter-spacing: 0.04em;
+    margin-right: 28px;
+    white-space: nowrap;
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize13;
+    }
+
+    @include mediaMax($screenMd) {
+      margin-left: -20px;
+    }
+  }
+
+  &__repostIcon:first-of-type {
+    margin-right: 16px;
+    width: 35px;
+    height: 35px;
+
+    @include mediaMax($screenMd) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

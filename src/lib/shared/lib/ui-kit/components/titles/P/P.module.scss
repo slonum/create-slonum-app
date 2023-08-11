@@ -1,0 +1,15 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.title {
+  font-family: $NunitoFontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fontSize16;
+  color: $darkColor;
+  letter-spacing: 0.04em;
+  margin: 0;
+
+  @include mediaMd {
+  }
+}

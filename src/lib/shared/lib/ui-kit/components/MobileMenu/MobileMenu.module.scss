@@ -1,0 +1,36 @@
+@import 'lib/shared/styles/app.scss';
+
+.menu {
+  display: none;
+  justify-content: center;
+
+  &--visible {
+    display: flex;
+    gap: 30px;
+  }
+
+  @include mediaMax($screenMd) {
+    min-width: 360px;
+    width: 100%;
+    background: $whiteColor;
+    box-shadow: 0 0 10px 0 $engShadowButtons;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    overflow: hidden;
+
+    button {
+      min-width: 155px;
+      width: 155px;
+      height: 36px;
+      font-size: $fontSize13;
+      line-height: 15px;
+    }
+  }
+}

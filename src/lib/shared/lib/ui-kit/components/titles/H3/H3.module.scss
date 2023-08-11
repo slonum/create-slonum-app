@@ -1,0 +1,22 @@
+@import 'lib/shared/styles/app.scss';
+
+.title {
+  font-family: $NunitoFontFamily;
+  font-style: normal;
+  font-weight: 700;
+  font-size: $fontSize28;
+  line-height: 38px;
+  color: $darkColor;
+
+  span {
+    color: $accentLineTitleColor;
+    line-height: 44px;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  @include mediaZr {
+    font-size: $fontSize16;
+    line-height: 22px;
+  }
+}

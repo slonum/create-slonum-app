@@ -1,0 +1,191 @@
+@import 'lib/shared/styles/app.scss';
+
+.training {
+  padding: 50px 20px 30px 20px;
+
+  @include mediaMax($screenMd) {
+    padding: 30px 20px;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+
+    @include mediaMax($screenMd) {
+      padding-bottom: 80px;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 420px;
+  &__elephant {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: -72px;
+    padding-right: 30px;
+    position: relative;
+    z-index: 10;
+    @include mediaMax($screenMd) {
+      padding-right: 21px;
+    }
+  }
+
+  &__head {
+    @include mediaMax($screenMd) {
+      display: none;
+    }
+  }
+
+  &__vector {
+    display: block;
+    margin: 0 auto 25px;
+  }
+
+  &__image {
+    width: 168px;
+    height: 117px;
+  }
+}
+
+.elephant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mediaMax($screenEx) {
+    display: none;
+  }
+
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 30px rgba(215, 211, 225, 0.5);
+  }
+
+  &__title {
+    font-family: $RubikFontFamily;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: $orangeColor;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+
+    @include mediaMax($screenMd) {}
+  }
+
+  &__image {
+    padding-top: 20px;
+
+    @include mediaMax($screenLg) {
+      width: 320px;
+      height: 450px;
+    }
+  }
+}
+
+.profile {
+  width: 100%;
+  max-width: 420px;
+
+  @include mediaMax($screenEx) {
+    // max-width: 320px;
+  }
+
+  &__inner {
+    padding: 30px;
+    width: 100%;
+    justify-content: space-between;
+
+    @include mediaMax($screenEx) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  }
+
+  &__title,
+  &__text {
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.04em;
+  }
+
+  &__title {
+    padding-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 27px;
+    color: $trainingFontColor;
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border: 2px solid $orangeColor;
+    border-radius: 50%;
+  }
+}
+
+.loader {
+  margin: auto;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  div {
+    margin: 0;
+  }
+}
+
+.choose {
+  &__list {
+    width: 100% !important;
+    padding-bottom: 20px !important;
+
+    @include mediaMax($screenLg) {
+      margin: 0;
+      padding: 10px 0 0;
+    }
+  }
+
+  width: 100% !important;
+  padding-bottom : 20px !important;
+
+  &__title {
+    text-align: center;
+    padding: 50px 0 30px 0;
+  }
+
+  &__grades {
+    padding-bottom: 33px;
+
+    margin: auto;
+
+    @include mediaMin($screenLg) {
+      width: max-content;
+    }
+  }
+}

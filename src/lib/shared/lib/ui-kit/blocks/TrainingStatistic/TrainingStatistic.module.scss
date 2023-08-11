@@ -1,0 +1,395 @@
+@import 'lib/shared/styles/app.scss';
+
+.statistic {
+  width: 100%;
+  padding: 65px 147px 67px 133px;
+  height: max-content;
+
+  &,
+  &__count,
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include mediaMax(1500px) {
+    padding: 40px 100px 67px 100px;
+  }
+
+  @include mediaMax($screenEx) {
+    padding: 40px 110px 67px 110px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  @include mediaMax($screenMd) {
+    padding: 20px 30px 27px 30px;
+  }
+
+  &__left {
+    position: relative;
+    width: 460px;
+
+    @include mediaMax(1500px) {
+      width: 380px;
+    }
+
+    @include mediaMax($screenEx) {
+      // margin-top: -550px;
+      margin-top: -565px;
+
+      animation: .4s linear 2s forwards aLeft;
+
+      @keyframes aLeft {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    @include mediaMax($screenLg) {
+      // margin-top: -530px;
+      margin-top: -560px;
+
+    }
+
+    @include mediaMax($screenMd) {
+      // margin-top: -320px;
+      margin-top: -370px;
+      width: 270px;
+      animation: .3s linear 2s forwards aLeftT;
+
+      @keyframes aLeftT {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    @include mediaMax($screenSm) {
+      margin-top: -400px;
+    }
+  }
+
+  &__right {
+
+    @include mediaMin($screenEx) {
+      animation: .4s linear aRight;
+
+      @keyframes aRight {
+        0% {
+          opacity: 0;
+          transform: translateY(10%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0%)
+        }
+      }
+    }
+
+    @include mediaMax($screenSm) {
+      height: 444px;
+    }
+
+  }
+
+  &__image {
+    position: relative;
+    bottom: -105px;
+    left: 27px;
+    width: 370px;
+    height: 500px;
+
+    animation: .4s ease-in-out both aEl;
+
+    @keyframes aEl {
+      0% {
+        transform: translateY(-15%)
+      }
+
+      100% {
+        transform: translateY(0%)
+      }
+    }
+
+    @include mediaMax(1500px) {
+      bottom: -145px;
+      width: 310px;
+      height: 420px;
+    }
+
+    @include mediaMax($screenLg) {
+      width: 266px;
+      height: 360px;
+      left: 45px;
+    }
+
+    @include mediaMax($screenMd) {
+      width: 178px;
+      height: 240px;
+      top: 82px;
+      left: 42px;
+    }
+  }
+
+  &__content {
+    width: 540px;
+
+    @include mediaMax(1500px) {
+      width: 490px;
+    }
+
+    @include media($screenMd, $screenEx) {
+      max-width: 480px;
+      margin: auto;
+      animation: .4s ease-in-out 2s both aContent;
+
+      @keyframes aContent {
+        0% {
+          opacity: 0;
+          transform: translateY(15%)
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0%)
+        }
+      }
+    }
+
+    @include mediaMax($screenMd) {
+      width: 380px;
+
+    }
+
+    @include mediaMax($screenSm) {
+      width: 260px;
+      height: 346px;
+    }
+  }
+
+  &__inner {
+    @include mediaMax($screenMd) {
+      animation: .4s ease-in-out 2s both aInner;
+
+      @keyframes aInner {
+        0% {
+          opacity: 0;
+          transform: translateY(15%)
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0%)
+        }
+      }
+    }
+  }
+
+  &__title {
+    padding-bottom: 50px;
+    color: $orangeColor;
+
+    @include mediaMax($screenEx) {
+      text-align: center;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize20;
+      line-height: 1.22;
+    }
+
+    @include mediaMax($screenSm) {
+      width: 235px;
+      margin: auto;
+    }
+
+    @include mediaMax($screenEx) {
+      animation: .4s linear aRight;
+
+      @keyframes aRight {
+        0% {
+          opacity: 0;
+          transform: translateY(40%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0%)
+        }
+      }
+    }
+  }
+
+  &__btnwrap {
+    @include mediaMax($screenMd) {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      left: -100%;
+      right: -100%;
+      margin: 0;
+      bottom: -80px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 50px;
+    min-width: 320px;
+    align-items: center;
+
+    button {
+      max-width: 250px;
+      min-width: 150px;
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.04em;
+      box-shadow: none !important;
+    }
+
+    @include mediaMin($screenMd) {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    @include mediaMax($screenLg) {
+      button {
+        max-width: 250px;
+        height: 54px;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+
+    @include mediaMax($screenMd) {
+      background-color: #FFFFFF;
+      box-shadow: 0px 0px 10px #DFE0E6;
+
+      button {
+        max-width: 155px;
+        height: 36px;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  &__count {
+    padding: 19px 20px;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    border-radius: 13px;
+    font-size: $fontSize24;
+    line-height: 33px;
+
+    & span:last-child {
+      font-size: $fontSize28;
+      line-height: 38px;
+    }
+
+    &:last-of-type {
+      margin-top: 30px;
+    }
+
+    @include mediaMax($screenMd) {
+      padding: 10px 15px;
+      font-size: $fontSize16;
+      line-height: 20px;
+
+      & span:last-child {
+        font-size: $fontSize20;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &__item {
+    margin: 20px 0;
+    padding: 0 20px 9px 20px;
+    border-bottom: 1px solid #DFDFDF;
+
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fontSize20;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #6B6B6B;
+
+    &--success {
+      color: $greenColor;
+    }
+
+    &--error {
+      color: $errorColor;
+    }
+
+    @include mediaMax($screenMd) {
+      padding: 0 15px 9px 15px;
+      font-size: $fontSize13;
+      line-height: 17px;
+    }
+  }
+
+  &__tooltip {
+    @include mediaMax($screenLg) {
+
+      &,
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    @include mediaMax($screenMd) {
+
+      &,
+      svg {
+        height: 17px;
+        width: 17px;
+      }
+    }
+  }
+
+  &__tooltipAnnotation {
+
+    @include mediaMax($screenMd) {
+      min-width: max-content;
+      min-height: max-content;
+      padding: 10px 5px;
+    }
+  }
+
+  &__itemInner {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include mediaMax($screenLg) {
+      gap: 10px;
+    }
+  }
+
+  &__popup {
+    width: 790px;
+    min-height: 400px;
+  }
+}

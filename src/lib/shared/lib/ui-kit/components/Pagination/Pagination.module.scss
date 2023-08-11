@@ -1,0 +1,83 @@
+@import 'lib/shared/styles/app.scss';
+ 
+.pagination {
+  padding: 10px;
+
+  justify-content: space-between;
+
+  &__buttons {
+    gap: 6px;
+  }
+
+
+  &__dot {
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $grayLightColor;
+    border-radius: 8px;
+    flex-shrink: 0;
+
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4; 
+
+    transition: .2s;
+    color: $grayOlympColor;
+
+
+    &--active {
+      color: $whiteColor;
+      background: $greenColor;
+    }
+
+    &:not(&--active):hover {
+      background-color: $grayColorShadow; 
+    }
+  }
+
+  &__info {
+    font-family: $InterFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $grayColor;
+  }
+
+  &__icon {
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+  }
+
+  &__counts {
+    gap: 8px;
+  }
+
+  &__dropdown {
+    min-width: 56px;
+    width: max-content;
+    height: 32px;
+    min-height: 0 !important;
+    input {
+      font-size: 16px !important; 
+      padding: 5px 18px 5px 10px  !important;
+    }
+  }
+
+  &__drop {
+    button {
+      padding: 8px !important;
+    }
+  }
+
+  &__hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

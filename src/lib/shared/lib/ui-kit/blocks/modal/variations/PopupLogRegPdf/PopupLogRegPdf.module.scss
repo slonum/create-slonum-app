@@ -1,0 +1,69 @@
+@import 'lib/shared/styles/app.scss';
+
+.pdf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+
+  @include mediaMax($screenLg) {
+    max-width: 320px;
+  }
+
+  &__title {
+    text-align: center;
+    line-height: 1.22;
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize20;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include mediaMax($screenLg) {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  &__text {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize18;
+    line-height: 1.5;
+    text-align: center;
+    margin: 20px 0 30px;
+    letter-spacing: 0.04em;
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize13;
+    }
+  }
+
+  &__br1 {
+    display: none;
+
+    @include mediaMax($screenLg) {
+      display: inline;
+    }
+  }
+
+  &__br2 {
+    display: inline;
+
+    @include mediaMax($screenLg) {
+      display: none;
+    }
+  }
+
+  &__textAccent {
+    font-weight: 500;
+
+    @include mediaMax($screenLg) {
+      font-weight: 600;
+    }
+  }
+}

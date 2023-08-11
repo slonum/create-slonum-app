@@ -1,0 +1,51 @@
+@import 'lib/shared/styles/app.scss';
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid $greenColor;
+    outline: none;
+
+    cursor: pointer;
+
+    &:checked {
+      background-color: $greenColor;
+
+      &+svg {
+        display: block;
+      }
+    }
+  }
+
+  &__check {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+  }
+
+  &__text {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize14;
+    color: $darkGrayColor;
+
+    >a {
+      color: $greenColor;
+      text-decoration: underline;
+    }
+  }
+}

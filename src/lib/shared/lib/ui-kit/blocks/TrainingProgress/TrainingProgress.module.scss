@@ -1,0 +1,293 @@
+@import 'lib/shared/styles/app.scss';
+
+.progress {
+  width: 100%;
+  padding: 65px 128px;
+  // height: 750px;
+
+  @include mediaMax($screenEx) {
+    padding: 65px 100px;
+  }
+
+  @include mediaMax($screenLg) {
+    padding: 55px 70px;
+  }
+
+  @include mediaMax($screenMd) {
+    padding: 20px 20px 10px 20px;
+  }
+
+  @include mediaMax($screenSm) {
+    padding: 20px 0 10px 0;
+  }
+
+  &__title {
+    padding-bottom: 50px;
+    color: $orangeColor;
+    text-align: center;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize20;
+      line-height: 1.22;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 20px;
+
+    @include mediaMin($screenMd) {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    @include mediaMax($screenMd) {
+      background-color: #FFFFFF;
+      box-shadow: 0px 0px 10px #DFE0E6;
+    }
+  }
+
+  &__button {
+    max-width: 250px;
+    min-width: 150px;
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+
+    @include mediaMax($screenLg) {
+      height: 54px;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include mediaMax($screenMd) {
+      max-width: 155px;
+      height: 36px;
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+}
+
+.table {
+  height: 446px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include mediaMin($screenEx) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  &__head {
+    padding: 4px 16px;
+
+    &:last-child:not(:first-child) {
+      border-left: 1px solid #DFDFDF;
+    }
+
+    @include mediaMax($screenEx) {
+      &:last-child:not(:first-child) {
+        display: none;
+      }
+    }
+
+    @include mediaMax($screenMd) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  &__row {
+    border-bottom: 1px solid #DFDFDF;
+
+    &--word {
+      padding: 8px 16px;
+    }
+
+    &--subWord {
+      padding: 6px 16px;
+    }
+
+    @include mediaMin($screenEx) {
+      &:nth-child(even) {
+        border-left: 1px solid #DFDFDF;
+      }
+    }
+
+    @include mediaMax($screenMd) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+
+  &__cell {
+    flex: 1 1 100%;
+
+    &:nth-child(2) {
+      flex: 1 1 80%;
+      min-width: 100px;
+
+      @include mediaMax($screenMd) {
+        flex: 1 1 100px;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 91px;
+      flex: 0 0 91px;
+
+      @include mediaMax($screenMd) {
+        width: 80px;
+        flex: 0 0 80px;
+      }
+    }
+  }
+
+  &__scroll {
+    height: calc(100% - 30px);
+    padding: 0 0 20px;
+  }
+}
+
+.value {
+
+  &__head {
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: $buttonNotlightColor;
+    white-space: nowrap;
+
+    @include mediaMax($screenMd) {
+      font-size: 14px;
+      line-height: 1.22;
+    }
+  }
+
+  &__word,
+  &__subWord,
+  &__answer {
+    font-family: $RubikFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+
+    max-width: 240px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+
+    @include mediaMax($screenMd) {
+      font-size: 14px;
+      line-height: 1.22;
+      max-width: 180px;
+    }
+
+    @include mediaMax(380px) {
+      font-size: 13px;
+      max-width: 130px;
+    }
+  }
+
+  &__word {
+    font-weight: 500;
+    font-feature-settings: 'liga' off;
+    color: $darkColor;
+  }
+
+  &__subWord {
+    font-size: 14px;
+    line-height: 17px;
+    color: $grayColor;
+  }
+
+  &__answer {
+    color: $errorColor;
+
+    &--true {
+      color: $greenColor;
+    }
+  }
+}
+
+.scrollbars {
+  &__container {
+    grid-template: auto / 1fr 0px !important; 
+    overflow: visible !important;
+  }
+
+  &__content {
+    padding: 0 !important;
+  }
+
+  &__scrollbar {
+    position: absolute !important;
+    z-index: 100000;
+    width: 16px !important;
+    left: 100%;
+  }
+
+  &__track-and-thumb {}
+
+  &__track {}
+
+  &__thumb {}
+}
+
+.scale {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &__item {
+    width: 8px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: $buttonLightBgHoverColor;
+    flex-shrink: 0;
+
+    @include mediaMax($screenMd) {
+      width: 6px;
+      height: 18px;
+    }
+  }
+
+  &__active {
+    background-color: $greenColor;
+  }
+
+  &__new {
+    background-color: $greenColorButtonStatusHover;
+  }
+
+  &__plus {
+    padding-left: 6px;
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $greenColorButtonStatusHover;
+
+    @include mediaMax($screenMd) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}

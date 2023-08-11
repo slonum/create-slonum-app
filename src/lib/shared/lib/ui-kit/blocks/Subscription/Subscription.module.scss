@@ -1,0 +1,241 @@
+@import 'lib/shared/styles/app.scss';
+
+.subscription {
+  max-width: 1680px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 372px;
+
+  border-radius: 81px;
+  background: url('../../assets/img/subscription-bg.webp') rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__title {
+    text-align: center;
+    color: #fff !important;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    grid-column: 1 / 3;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize18;
+    color: $whiteColor;
+    line-height: 27px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    [class*='input__wrapper'] {
+      margin-bottom: 5px;
+
+      @include mediaMax($screenLg) {
+        margin-bottom: 20px;
+      }
+    }
+
+    [class*='input__error'] {
+      margin-top: 3px;
+    }
+
+    label {
+      white-space: nowrap;
+      padding-left: 0;
+    }
+
+    &__controls {
+      display: grid;
+      grid-template: auto auto / 540px auto;
+      justify-content: center;
+      column-gap: 30px;
+    }
+  }
+
+  &__form--isHeader {
+    grid-template: auto 1fr/400px auto;
+    row-gap: 20px;
+
+    @include mediaMax($screenMd) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+
+    button {
+      margin-top: 5px;
+    }
+
+    input {
+      margin-bottom: 10px;
+
+      @include mediaMax($screenMd) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  button {
+    min-width: 325px;
+  }
+
+  &__checkbox {
+    text-align: center;
+    margin-top: 50px;
+
+
+    >label {
+      font-size: $fontSize20;
+
+      @include mediaMax($screenLg) {
+        font-size: $fontSize14;
+      }
+    }
+  }
+
+  &__input--isHeader {
+    width: 383px;
+    height: min-content;
+
+    p {
+      position: static;
+    }
+
+    @include mediaMax($screenMd) {
+      width: 300px;
+
+      p {
+        position: absolute;
+      }
+    }
+
+  }
+
+  &__button {
+    min-width: 210px;
+
+    @include mediaMax($screenMd) {
+      min-width: 190px;
+      margin-top: 35px;
+    }
+  }
+}
+
+@include mediaMax($screenEx) {
+  .subscription {
+    margin: 20px 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    button {
+      min-width: 250px;
+    }
+
+  }
+}
+
+@include mediaMax($screenLg) {
+  .subscription {
+    border-radius: 0;
+    margin: 20px 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-position-x: -81px;
+
+    &__title {
+      line-height: 1.23;
+    }
+
+    button {
+      justify-self: flex-start;
+      height: 40px;
+      min-width: 191px;
+      font-size: $fontSize15;
+    }
+
+    &__paragraph {
+      font-size: $fontSize16;
+      line-height: 20px;
+    }
+
+    &__form__controls {
+      grid-template: auto auto auto / 1fr;
+
+      >button {
+        justify-self: center;
+      }
+    }
+
+    &__form--isHeader {
+      grid-template: auto auto/400px auto;
+    }
+  }
+}
+
+@include mediaMax($screenMd) {
+
+  .subscription {
+    &__title {
+      text-align: start;
+      font-size: $fontSize26;
+      margin-bottom: 10px;
+    }
+
+    &__paragraph {
+      text-align: start;
+      font-size: $fontSize14;
+      margin-bottom: 30px;
+    }
+
+    &__container {
+      width: 320px;
+    }
+
+    &__checkbox {
+      text-align: start;
+      align-self: flex-start;
+      font-size: $fontSize14;
+      margin-top: 30px;
+
+      >label {
+        font-size: $fontSize14;
+        line-height: 1.5;
+        color: #9FA0A7;
+
+        text-align: start;
+
+        white-space: initial;
+      }
+    }
+
+    &__form__controls {
+      >button {
+        justify-self: stretch;
+      }
+    }
+
+    &__input {
+      height: 30px;
+    }
+  }
+
+}

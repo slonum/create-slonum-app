@@ -1,0 +1,108 @@
+@import 'lib/shared/styles/app.scss';
+
+.popup {
+  width: 520px;
+  height: 320px;
+  padding: 71px 68.5px;
+  flex-direction: column;
+  position: relative;
+
+  &,
+  &__buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 380px;
+    text-align: center;
+  }
+
+  button {
+    width: 150px;
+    min-width: 150px;
+    height: 60px;
+    border-radius: 15px;
+  }
+
+  @include mediaMax($screenLg) {
+    width: 400px;
+    height: 220px;
+  }
+
+  &__image {
+    position: absolute;
+    width: 254px;
+    height: 176px;
+    top: -125px;
+  }
+}
+
+@include mediaMax($screenLg) {
+  .popup {
+    height: 300px;
+
+    &__title {
+      width: 500px;
+    }
+  }
+}
+@include mediaMax($screenMd) {
+  .popup {
+
+    width: 320px;
+    height: 220px;
+    padding: 50px 0 0 0;
+    &__title {
+      width: 280px;
+      font-size: $fontSize20;
+      line-height: 27px;
+    }
+    &__image {
+      top: -71px;
+      width: 145px;
+      height: 100px;
+    }
+    &__buttons {
+      margin-top: 0;
+      height: 36px;
+    }
+
+    button {
+      width: 100px;
+      min-width: 100px;
+      height: 36px;
+      border-radius: 10px;
+    }
+  }
+}
+@include mediaZr {
+  .popup {
+    width: 320px;
+    height: 220px;
+    padding: 50px 0 0 0;
+
+    &__title {
+      width: 280px;
+    }
+
+    &__image {
+      top: -71px;
+      width: 145px;
+      height: 100px;
+    }
+
+    &__buttons {
+      margin-top: 0;
+      height: 36px;
+    }
+
+    button {
+      width: 100px;
+      min-width: 100px;
+      height: 36px;
+      border-radius: 10px;
+    }
+  }
+}

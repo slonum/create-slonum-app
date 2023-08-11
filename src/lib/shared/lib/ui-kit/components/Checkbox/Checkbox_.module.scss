@@ -1,0 +1,87 @@
+@import 'lib/shared/styles/app.scss';
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 10px;
+
+  &__input {
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &__tick {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 6px;
+
+    z-index: 6;
+    line-height: 0;
+    pointer-events: none;
+
+    &--main {
+      border: 1.5px solid $greenColor;
+    }
+
+    &--light {
+      border-radius: 2px;
+      border: 1.5px solid #e6e6e6;
+    }
+
+    @include mediaZr {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+
+      svg {
+        height: 5px;
+        width: 9px;
+      }
+    }
+  }
+
+  &__checked {
+    &--main {
+      border: 1.5px solid $greenColor;
+      background-color: $greenColor;
+    }
+
+    &--light {
+      border-radius: 2px;
+      border: 1.5px solid #e6e6e6;
+
+      path {
+        stroke: $accentLineColor !important;
+      }
+    }
+  }
+
+  &__label {
+    font-family: $RubikFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    color: $darkGrayColor;
+
+    @include mediaZr {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+}

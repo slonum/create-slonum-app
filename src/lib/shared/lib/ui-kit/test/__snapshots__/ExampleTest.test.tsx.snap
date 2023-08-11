@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExampleTest should create snapshot 1`] = `
+<div>
+  <div
+    class="test"
+  >
+    <button>
+      buttonTtitle
+    </button>
+    <button
+      class="test__buttonNoTtitle"
+    >
+      <span>
+        buttonNoTtitle
+      </span>
+    </button>
+    <a
+      href="/test"
+    >
+      link to page test
+    </a>
+    <a
+      href="https://example.com/"
+    >
+      link to page example.com
+    </a>
+  </div>
+</div>
+`;
+
+exports[`ExampleTest should create snapshot 2`] = `
+<div>
+  <div
+    class="test"
+  >
+    <div>
+      it is New Snap
+    </div>
+    <button>
+      buttonTtitle
+    </button>
+    <button
+      class="test__buttonNoTtitle"
+    >
+      <span>
+        buttonNoTtitle
+      </span>
+    </button>
+    <a
+      href="/test"
+    >
+      link to page test
+    </a>
+    <a
+      href="https://example.com/"
+    >
+      link to page example.com
+    </a>
+  </div>
+</div>
+`;

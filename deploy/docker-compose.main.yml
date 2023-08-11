@@ -1,0 +1,12 @@
+services:
+  slonum-fraction-calculator-frontend:
+    image: registry.gitlab.com/slonum/slonum-fraction-calculator-frontend/slonum-fraction-calculator-frontend:latest
+    container_name: dev-slonum-fraction-calculator-frontend
+    restart: always
+
+
+
+networks:
+  default:
+    name: slonum_net
+    external: true

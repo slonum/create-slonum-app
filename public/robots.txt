@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://draw.slonum.ru/sitemap.xml
+Sitemap: https://dev-draw.slonum.ru/sitemap.xml

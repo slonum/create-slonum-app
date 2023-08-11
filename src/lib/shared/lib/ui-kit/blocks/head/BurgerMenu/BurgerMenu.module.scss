@@ -1,0 +1,92 @@
+@import 'lib/shared/styles/app.scss';
+
+.menu {
+  @include mediaMin($screenGt) {
+    display: none;
+  }
+
+  padding: 0 20px 0 40px;
+  width: 520px;
+  position: fixed;
+  z-index: 10009;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  visibility: hidden;
+  transform: translate(100%, 0);
+  transition: .2s;
+
+  @include mediaMax($screenSm) {
+    padding: 0;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: auto;
+    transform: translate(0, -100%);
+  }
+
+  &--open {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    @include mediaMax($screenSm) {
+      height: 70px;
+      padding: 0 20px;
+    }
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+
+    @include mediaMax($screenSm) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__login {
+    width: 178px;
+    height: 44px;
+    font-weight: 500 !important;
+    border-radius: 10px !important;
+    margin-top: 40px;
+
+    @include mediaMax($screenSm) {
+      width: 100%;
+      height: 50px;
+      padding-left: 20px;  
+      margin: 0;
+      justify-content: flex-start;
+      border: none;
+      border-radius: 0 !important;
+      border-top: $blogBorder;
+    }
+  }
+
+  &__profile {
+    padding: 40px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 166%;
+    color: $darkGrayColor;
+    
+    @include mediaMax($screenSm) {
+      display: none;
+    }
+  }
+}

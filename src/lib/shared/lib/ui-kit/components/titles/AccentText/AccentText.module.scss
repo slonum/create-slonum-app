@@ -1,0 +1,12 @@
+@import 'lib/shared/styles/app.scss';
+
+.accentText {
+  color: $accentLineTitleColor;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  &--vocabulary {
+    color: $orangeColor;
+  }
+}

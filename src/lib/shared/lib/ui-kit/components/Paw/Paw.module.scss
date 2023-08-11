@@ -1,0 +1,35 @@
+@import 'lib/shared/styles/app.scss';
+
+.paw {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+
+  @include mediaZr {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__svg {
+    position: absolute;
+  }
+
+  &__number {
+    position: absolute;
+
+    font-family: $RubikFontFamily;
+    font-size: $fontSize14;
+    font-weight: 500;
+    color: #fff;
+
+    top: 11px;
+
+    @include mediaZr {
+      font-size: $fontSize13;
+      top: 7px;
+    }
+  }
+}

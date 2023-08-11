@@ -1,0 +1,184 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  z-index: inherit;
+  overflow: visible;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: default;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  & img {
+    transition: 0.1s ease-in-out;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  &:not(&--noparent):not(&--active):not(&--noeffect):hover {
+    cursor: pointer;
+
+    @include mediaMin($screenLg) {
+
+      &,
+      ~.avatar__childname {
+        transition: opacity .2s;
+        opacity: .7;
+      }
+    }
+  }
+
+
+  &:not(&--noparent):not(&--active):not(&--noeffect):active {
+    transition: 0.3s ease-in-out;
+
+    @include mediaMin($screenLg) {
+      img {
+        width: 85%;
+        height: 85%;
+      }
+    }
+
+    @include mediaMax($screenLg) {
+      img {
+        border: 3px solid $orangeColor;
+      }
+      ~.avatar__childname {
+        color: $orangeColor;
+      }
+    }
+  }
+
+  &--parent {
+    @include mediaMax($screenLg) {
+      cursor: default;
+
+      img {
+        border: 3px solid $orangeColor;
+      }
+    }
+  }
+
+  &--active {
+    cursor: default;
+
+    img {
+      border: 3px solid $orangeColor;
+    }
+  }
+
+  &--child {
+
+    &,
+    img {
+      height: 52px;
+      width: 52px;
+    }
+  }
+
+  @include mediaZr {
+
+    &,
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &--words {
+    @include mediaMax($screenMd) {
+      &,
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 70px;
+  }
+
+  &__childname {
+    margin: 0;
+    font-family: $NunitoFontFamily;
+    font-weight: 600;
+    color: $darkGrayColor;
+    font-size: $fontSize16;
+    line-height: 22px;
+    text-align: center;
+    white-space: nowrap;
+
+    &--active {
+      color: $orangeColor;
+    }
+  }
+
+  &__add {
+    width: 52px;
+    height: 52px;
+    position: relative;
+
+    cursor: pointer;
+    &:hover .avatar__hover {
+      opacity: 1;
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      height: 3px;
+      width: 21px;
+      top: 25px;
+      left: 15px;
+      z-index: 2;
+      background: $disableFontColor;
+    }
+
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__hover {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background: $cabinetIconBackgroundColor;
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+}
+
+
+.none {
+  @include mediaMax($screenLg) {
+    display: none;
+  }
+}
+
+.empty {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

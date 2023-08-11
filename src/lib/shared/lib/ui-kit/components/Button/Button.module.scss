@@ -1,0 +1,306 @@
+@import 'lib/shared/styles/app.scss';
+
+.button {
+  min-width: 290px;
+  height: 60px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  font-family: $RubikFontFamily;
+  font-style: normal;
+  font-weight: 700;
+  font-size: $fontSize20;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+
+  @include mediaMax($screenMd) {
+    height: 42px;
+    min-width: 191px;
+    border-radius: 10px;
+    font-size: $fontSize15;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $buttonCabinetDisabled;
+  }
+
+  &__main {
+    background: $greenColor;
+    box-shadow: 0px 15px 30px $greenColorShadow;
+    color: $whiteColor;
+
+    &:not(:disabled):hover {
+      background: $greenColorHover;
+      transition: 0.3s;
+    }
+
+    &--opacity-off {
+      background-color: $greenColor;
+      box-shadow: 0 15px 30px 0 $greenColorShadow;
+      color: $whiteColor;
+    }
+  }
+
+  &__main-light {
+    min-width: 170px;
+    height: 50px;
+    border-radius: 8px;
+    font-family: $NunitoFontFamily;
+    font-weight: 600;
+    font-size: 18px;
+    background: $greenColor;
+    color: $whiteColor;
+    transition: all 0.3s;
+
+    &:not(:disabled):hover {
+      background: $greenColorHover;
+      transition: 0.3s;
+    }
+  }
+
+  &__aditional {
+    background: $redColor;
+    box-shadow: 0px 10px 20px $redColor;
+    color: $whiteColor;
+
+    &:disabled {
+      background: rgba($redColor, .3);
+      box-shadow: 0px 10px 20px rgba($redColor, .5);
+    }
+
+    // &:hover,
+    // &:disabled:hover {
+    &:not(:disabled):hover {
+      background: $redColorHover;
+      transition: 0.3s;
+    }
+  }
+
+  &__light {
+    background: $whiteColor;
+    border: 1px solid $darkColor;
+    font-weight: 400;
+    color: $darkColor;
+
+    &:hover {
+      background: $buttonLightBgHoverColor;
+      border: 1px solid $grayColor;
+      transition: 0.3s;
+    }
+  }
+
+  &:not(:disabled):active {
+    opacity: 0.1;
+    transition: 0.1s;
+  }
+
+  @include mediaZr {
+    min-width: 190px;
+    height: 42px;
+    font-size: $fontSize15;
+    line-height: 18px;
+    border-radius: 10px;
+  }
+
+  &__download {
+    background-color: $greenColor;
+    box-shadow: 0 15px 30px 0 $greenColorShadow;
+    color: $whiteColor;
+  }
+
+  &__download:hover {
+    background-color: $greenColorHover;
+  }
+
+  &__download:active {
+    opacity: 0;
+    transition: 0.1s;
+  }
+
+  &__save {
+    background-color: $whiteColor;
+    color: $greenColor;
+    border: 1px solid $greenColor;
+  }
+
+  &__save:disabled:hover {
+    background-color: $whiteColor;
+    color: $greenColor;
+    border: 1px solid $greenColor;
+  }
+
+  &__save:hover {
+    background-color: $buttonCabinetSaveHover;
+  }
+
+  // &__save:active {
+  //   opacity: 0;
+  //   transition: 0.1s;
+  // }
+  &__practice {
+    background-color: $whiteColor;
+    padding: 15px 62px;
+    border: 1px solid $greenColor;
+    color: $greenColor;
+    font-weight: 400;
+    font-size: $fontSize16;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    min-width: unset;
+    max-width: 250px;
+    height: 50px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $greenColor;
+      color: $whiteColor;
+    }
+
+    @include mediaMax($screenEx) {
+      padding: 15px 52px;
+    }
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize14;
+      line-height: 17px;
+      display: flex;
+      justify-content: center;
+      /* padding: 15px 20px; */
+    }
+  }
+
+  &__practice-bold {
+    white-space: nowrap;
+    background-color: $whiteColor;
+    padding: 15px 62px;
+    border: 1px solid $greenColor;
+    color: $greenColor;
+    font-weight: 700;
+    font-size: $fontSize16;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    min-width: 340px;
+    max-width: 340px;
+    height: 60px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $greenColor;
+      color: $whiteColor;
+    }
+
+    @include mediaMax($screenEx) {
+      padding: 15px 52px;
+    }
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize14;
+      line-height: 28px;
+      display: flex;
+      justify-content: center;
+      /* padding: 15px 20px; */
+    }
+  }
+
+  &__notlight {
+    background: $buttonLightBgHoverColor;
+    border: 1px solid $grayColor;
+    color: $buttonNotlightColor;
+    transition: 0.3s;
+
+    &:hover {
+      background: $whiteColor;
+      border: 1px solid $darkColor;
+    }
+  }
+
+  &__trainer {
+    background-color: $buttonLightBgHoverColor;
+    color: $grayColor;
+    border: 1px solid $grayColor;
+
+    &:hover {
+      background-color: $whiteColor;
+    }
+
+    &:disabled {
+      cursor: pointer;
+      border: none;
+      background-color: $vocabularyWordsLineColor;
+      color: $whiteColor;
+    }
+  }
+
+  &__black {
+    height: 39px;
+    min-width: 168px;
+    border-radius: 0;
+    background-color: $darkColor;
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize14;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: $whiteColor;
+    text-align: center;
+
+    &:hover {
+      background-color: $darkGrayColor;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize12;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    color: $greenColor;
+    background: none;
+    min-width: min-content;
+    white-space: nowrap;
+    transition: .3s;
+
+    &:hover {
+      color: $greenColorHover;
+    }
+  }
+
+  &__main-card {
+
+    min-width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: $NunitoFontFamily;
+    font-weight: 500;
+    font-size: $fontSize12;
+    line-height: 20px;
+    background: $greenColor;
+    color: $whiteColor;
+    transition: all 0.3s;
+    text-transform: uppercase;
+
+    &:not(:disabled):hover {
+      background: $greenColorHover;
+      transition: 0.3s;
+    }
+  }
+}
+
+@include mediaMax($screenEx) {
+  .button {
+    &__download {
+      background-color: $greenColor;
+      box-shadow: 0 8px 15px 0 $greenColorShadow;
+      color: $whiteColor;
+    }
+
+    &__download:hover {
+      background-color: $greenColorHover;
+    }
+  }
+}

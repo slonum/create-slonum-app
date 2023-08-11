@@ -1,0 +1,666 @@
+@import 'lib/shared/styles/app.scss';
+
+.input {
+  &__wrapper {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    transition: margin 0.1s;
+    height: 60px;
+
+    & .input__field_error {
+      padding-bottom: 1px;
+      margin-bottom: 10px;
+    }
+
+    +[class*='form__forgot'] {
+      margin-top: -10px;
+      margin-right: -30px;
+
+      @include mediaZr {
+        margin-top: 8px;
+        margin-right: 0;
+      }
+    }
+
+    & .input__field_error_pwd {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__field {
+    outline: none;
+    height: 60px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid $grayColor;
+    padding-left: 20px;
+    font-size: $fontSize18;
+    font-family: $RubikFontFamily;
+    line-height: 24px;
+    color: $darkGrayColor;
+    transition: all 0.15s;
+
+    &-class,
+    &-class:hover {
+      border: none !important;
+    }
+
+    @include mediaMax($screenLg) {
+      padding: 0 13px;
+      border-radius: 10px;
+    }
+
+    &_type {
+      padding: 0 20px;
+
+      @include mediaMax($screenLg) {
+        padding: 0 13px;
+        height: 40px;
+      }
+    }
+
+    &_donate {
+      padding-left: 50px;
+    }
+
+    &_disabled {
+      pointer-events: none;
+    }
+  }
+
+  &__field:hover {
+    border: 1px solid $darkGrayColor;
+  }
+
+  &__field:focus {
+    border: 1px solid $darkColor;
+    color: $darkColor;
+  }
+
+  &__field_error,
+  &__field_error:hover,
+  &__field_error:focus {
+    border: 1px solid $orangeColor;
+  }
+
+  &__placeholder {
+    font-family: $RubikFontFamily;
+    overflow: visible;
+    position: absolute;
+    z-index: 14;
+    pointer-events: none;
+    left: 20px;
+    top: 18px;
+    background-color: $whiteColor;
+    border-radius: 4px;
+    user-select: none;
+    padding: 0 5px;
+    transition: top 0.15s linear, font-size 0.15s linear;
+    font-size: $fontSize18;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: $grayColor;
+
+    @include mediaMax($screenLg) {
+      left: 13px;
+      padding-left: 0;
+    }
+
+    &_type {}
+  }
+
+  &__field:focus~.input__placeholder,
+  &__field:active~.input__placeholder,
+  &__field:not(:placeholder-shown)+.input__placeholder {
+    top: -8px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkGrayColor;
+  }
+
+  &__error {
+    z-index: 5;
+    width: 100%;
+    margin: -10px 0 0 20px;
+    display: block;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize16;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: $orangeColor;
+    position: absolute;
+    top: 75px;
+  }
+
+  &__alert {
+    background-size: cover;
+    width: 22px;
+    height: 24px;
+    position: absolute;
+    cursor: pointer;
+    top: 18px;
+    right: 20px;
+    background-image: url('../../assets/img/input-alert.png');
+  }
+
+  &__annotation {
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    height: 99px;
+    width: 280px;
+    border-radius: 15px;
+    position: absolute;
+    background-color: $greenColor;
+    box-shadow: 0 15px 30px 0 $greenColorShadow;
+    z-index: 110;
+    top: 45px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__annotationText {
+    color: $whiteColor;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize18;
+    height: 63px;
+    width: 250px;
+  }
+
+  &__toggle {
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+    background-image: url('../../assets/img/password-off.png');
+
+    &:hover {
+      filter: invert(1);
+    }
+  }
+
+  &__toggle:hover~.input__field,
+  &__alert:hover~.input__field {
+    border: 1px solid $darkGrayColor;
+  }
+
+  &__toggle_on {
+    background-image: url('../../assets/img/password-on.png');
+
+    &:hover {
+      filter: invert(1);
+    }
+  }
+
+  &__link {
+    width: 100%;
+    margin: 4px 0 0 20px;
+    display: block;
+    font-family: $RubikFontFamily;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    position: absolute;
+    text-transform: uppercase;
+    margin-left: 180px;
+    font-size: $fontSize12;
+    color: $orangeColor;
+
+    @include mediaMax($screenMd) {
+      margin-left: 90px;
+    }
+  }
+}
+
+@include mediaMax($screenEx) {
+  .input {
+    &__wrapper {
+      //width: 440px;
+      font-size: $fontSize14;
+    }
+
+    &__placeholder {
+      font-size: $fontSize16;
+    }
+  }
+}
+
+@include mediaMax($screenMd) {
+  .input {
+    &__wrapper {
+      font-size: $fontSize14;
+      height: 50px;
+      margin-bottom: 12px;
+
+      & .input__field_error {
+        padding-bottom: 1px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__field {
+      height: 40px;
+      // width: 320px;
+      font-size: $fontSize13;
+    }
+
+    &__placeholder {
+      top: 9px;
+      font-size: $fontSize13;
+
+      &_type {
+        left: 13px;
+        top: 12px;
+        font-size: $fontSize13;
+        line-height: 15px;
+        letter-spacing: 0.04em;
+      }
+    }
+
+    &__error {
+      font-size: $fontSize12;
+      line-height: 13px;
+      top: 39px;
+      margin-bottom: 0px;
+      margin-top: 5px;
+    }
+
+    &__alert,
+    &__toggle {
+      background-repeat: no-repeat;
+      background-size: 20px;
+      top: 10px;
+      right: 10px;
+    }
+
+    &__annotation {
+      height: 85px;
+      width: 220px;
+      top: 35px;
+    }
+
+    &__annotationText {
+      font-size: $fontSize13;
+      width: 170px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drop {
+  height: 60px;
+  position: relative;
+
+  @include mediaMax($screenMd) {}
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 20px;
+    transition: 0.4s;
+    pointer-events: none;
+    z-index: 3;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+
+    // @include mediaMax($screenEx) {
+    //   top: 15px;
+    // }
+  }
+
+  &__input {
+    cursor: pointer;
+    caret-color: transparent;
+    transition: 0.4s;
+    height: inherit;
+    max-height: inherit;
+
+    &--active {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 375px;
+    }
+
+    &--mult {
+      padding-right: 50px;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    max-height: inherit;
+    height: inherit;
+    background-color: white;
+    border-radius: 15px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s;
+
+    overscroll-behavior: contain;
+
+    &--active {
+      opacity: 1;
+      height: 370px;
+      z-index: 10;
+
+      >*:last-child {
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    max-height: inherit;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: 0;
+    transition: 0.4s;
+
+    overscroll-behavior: contain;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &--active {
+      height: 310px;
+      pointer-events: all;
+    }
+  }
+
+  &__title {
+    padding: 16.5px 20px;
+    line-height: 27px;
+    border-bottom: 1px solid $disableFontColor;
+
+    &-modal {
+      color: $orangeColor;
+      font-family: $NunitoFontFamily;
+      font-size: $fontSize20;
+      font-weight: 700;
+      line-height: 27px;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &__item {
+    padding: 10px 20px;
+    margin: 9px 0;
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fontSize16;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: $darkGrayColor;
+
+    @include mediaMax($screenEx) {
+      font-size: $fontSize20;
+    }
+
+    @include mediaMax($screenLg) {
+      padding-left: 13px;
+      font-size: $fontSize13;
+      line-height: 15px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: #f6f8fa;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    top: 80px;
+    right: 7.5px;
+    width: 7.5px;
+    height: 65px;
+    background: #acafbc;
+    border-radius: 7px;
+    cursor: pointer;
+    display: none;
+    touch-action: none;
+
+    &--date {
+      top: 60px;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.dropDate {
+  height: 60px;
+  position: relative;
+
+  &:focus .dropDate__list--active,
+  &:active .dropDate__list--active,
+  &:hover .dropDate__list--active {
+    //border: 1px solid $darkGrayColor;
+    border-top: 1px solid $disableFontColor;
+  }
+
+  @include mediaMax($screenLg) {
+    height: 40px;
+  }
+
+  &__wrapper {
+    &--day {
+      width: 40%;
+
+      @include mediaMax($screenLg) {
+        width: 47.5%;
+      }
+    }
+
+    &--month {
+      width: 32%;
+
+      @include mediaMax($screenLg) {
+        width: 26.25%;
+      }
+    }
+
+    &--year {
+      width: 24%;
+
+      @include mediaMax($screenLg) {
+        width: 20%;
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    right: 20px;
+    transition: 0.4s;
+    pointer-events: none;
+    z-index: 3;
+
+    @include mediaMax($screenEx) {
+      right: 12px;
+    }
+
+    @include mediaMax($screenLg) {
+      right: 8px;
+      width: 12px;
+      height: 6px;
+    }
+
+    &--active {
+      transform: rotate(180deg);
+    }
+
+    // @include mediaMax($screenEx) {
+    //   top: 15px;
+    // }
+  }
+
+  &__input {
+    cursor: pointer;
+    caret-color: transparent;
+    height: inherit;
+    max-height: inherit;
+    color: transparent !important;
+    transition: 0.2s;
+    width: 100%;
+
+    &--active {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.2s, border-bottom 0s, border-radius 0s;
+      border-bottom: none !important;
+      border-bottom-left-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    max-height: inherit;
+    height: inherit;
+    background-color: transparent;
+    border-radius: 15px;
+    pointer-events: none;
+    opacity: 1;
+    transition: 0.2s;
+    width: 100%;
+    z-index: 16;
+
+    &--active {
+      opacity: 1;
+      height: 370px;
+
+      >*:last-child {
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    max-height: inherit;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: 0;
+    transition: 0;
+    overscroll-behavior: contain;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &--active {
+      transition: 0.2s;
+      border: 1px solid $grayColor;
+      border-top: 1px solid $grayColor;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height: 310px;
+      pointer-events: all;
+      background-color: $whiteColor;
+    }
+  }
+
+  &__title {
+    padding: 15px 20px;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize18;
+    font-weight: 400;
+    color: $darkGrayColor;
+    line-height: 30px;
+
+    @include mediaMax($screenEx) {
+      font-size: $fontSize16;
+    }
+
+    @include mediaMax($screenLg) {
+      padding: 10px 13px;
+      font-size: $fontSize13;
+      line-height: 20px;
+    }
+  }
+
+  &__item {
+    padding: 10px 20px;
+    margin: 9px 0;
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fontSize16;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: $darkGrayColor;
+
+    @include mediaMax($screenEx) {
+      font-size: $fontSize20;
+    }
+
+    @include mediaMax($screenLg) {
+      padding-left: 13px;
+      font-size: $fontSize13;
+      line-height: 15px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: #f6f8fa;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    top: 80px;
+    right: 7.5px;
+    width: 7.5px;
+    height: 65px;
+    background: #acafbc;
+    border-radius: 7px;
+    cursor: pointer;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}

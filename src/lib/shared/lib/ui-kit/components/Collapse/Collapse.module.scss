@@ -1,0 +1,164 @@
+@import 'lib/shared/styles/app.scss';
+
+@mixin line {
+  height: 2px;
+  width: 22px;
+  border-radius: 3px;
+  background-color: $whiteColor;
+  position: absolute;
+  z-index: 5;
+  right: 13px;
+  top: 23px;
+
+  @include mediaMax($screenMd) {
+    width: 16px;
+    border-radius: 1px;
+    right: 9px;
+    top: 16px;
+  }
+}
+
+.verticalLine {
+  @include line;
+}
+
+.horizontalLine {
+  @include line;
+  transform: rotate(90deg);
+}
+
+.collapse {
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $blackColor;
+
+  @include mediaZr {
+    width: 100%;
+  }
+
+  &__header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 0;
+    position: relative;
+    z-index: 10;
+
+    @include mediaZr {
+      height: 58px;
+      padding: 20px 0;
+    }
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  &__question {
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize20;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    cursor: pointer;
+    color: $darkColor;
+
+    @include mediaZr {
+      width: 260px;
+      font-size: $fontSize14;
+      line-height: 17px;
+    }
+  }
+
+  &__question--bold {
+    font-size: $fontSize28;
+    font-weight: 700;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize16;
+    }
+  }
+
+  &__button {
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+    background: $orangeColor;
+    border: none;
+    position: relative;
+    right: 0;
+    z-index: 3;
+
+    @include mediaMax($screenMd) {
+      height: 34px;
+      width: 34px;
+    }
+
+    &:hover {
+      background-color: $orangeColorHover;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    transition-duration: 0.2s;
+    transition-property: all;
+    opacity: 0;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  &__answer {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize20;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: left;
+    max-width: 800px;
+    color: $darkGrayColor;
+    margin: 0 0 36px 0;
+
+    @include mediaMax($screenMd) {
+      padding-right: 40px;
+    }
+
+    @include mediaZr {
+      width: 100%;
+      font-size: $fontSize14;
+      line-height: 166%;
+      margin: 0 0 20px 0;
+      padding-right: 0;
+    }
+
+    & a {
+      color: $orangeColor;
+    }
+
+    & a:hover {
+      color: $orangeColorHover;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox+label &__button {
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
+
+  &__checkbox:checked+label &__button {
+    transform: rotate(135deg);
+    transition: 0.5s;
+  }
+
+  &__checkbox:checked+label+&__content {
+    opacity: 1;
+    max-height: 500px;
+  }
+}

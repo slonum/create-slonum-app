@@ -1,0 +1,214 @@
+@import 'lib/shared/styles/app.scss';
+
+@mixin formatStyle {
+  font-family: $RubikFontFamily;
+  font-size: $fontSize18;
+  line-height: 30px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: $grayColor;
+
+  span {
+    color: $orangeColor;
+  }
+
+  @include mediaMax($screenEx) {
+    line-height: 22px;
+  }
+}
+
+.uploadImage {
+  &__block {
+    background: url("../../assets/img/cabinet-card-background.png") 630px 390px;
+    border-radius: 40px;
+    height: 390px;
+    width: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  &__uploadedImg {
+    width: 115px;
+    height: 115px;
+    border: 1px solid $orangeColor;
+    margin: 25px 0;
+    border-radius: 15px;
+    overflow: hidden;
+
+    @include mediaMax($screenLg) {
+      width: 75px;
+      height: 75px;
+      margin: 15px 0;
+    }
+  }
+
+  &__loader {
+    margin-bottom: 30px;
+
+    @include mediaZr {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize18;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    width: 355px;
+    color: $darkGrayColor;
+    margin: 40px 0 15px 0;
+
+    &::before {
+      content: attr(desktop-text);
+    }
+  }
+
+  &__format {
+    width: 569px;
+    margin: 0 0 30px 0;
+    @include formatStyle;
+  }
+
+  &__inputFile {
+    display: none;
+  }
+
+  &__uploadAvatar {
+    background-image: url("../../assets/img/uploading_avatar.png");
+    background-size: 426px 175px;
+    height: 175px;
+    width: 426px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__formatAvatar {
+    @include formatStyle;
+    width: 308px;
+    margin: 15px 0 20px 0;
+  }
+}
+
+@include mediaMax($screenEx) {
+  .uploadImage {
+
+    &__block {
+      background: none;
+      height: min-content;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__format {
+      padding-top: 50px;
+    }
+
+    &__uploadAvatar {
+      background: none;
+      width: 220px;
+      height: 120px;
+      align-items: flex-end;
+      font-size: $fontSize13;
+    }
+
+    &__info {
+      &::before {
+        content: attr(mobile-text);
+      }
+    }
+
+    &__formatAvatar {
+      margin: 15px 0 5px 0;
+    }
+  }
+}
+
+@include mediaMax($screenLg) {
+  .uploadImage {
+    &__button {
+      margin-top: 100px;
+    }
+
+    &__block {
+      width: 360px;
+      height: auto;
+      margin-top: 0;
+    }
+
+    &__info {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: $fontSize13;
+      line-height: 22px;
+    }
+
+    &__format {
+      width: 227px;
+      margin: 0;
+      padding: 0;
+      font-size: $fontSize13;
+    }
+
+    &__formatAvatar {
+      width: 214px;
+      font-size: $fontSize13;
+      margin: 10px 0 0 0;
+    }
+
+    &__replaceButton {
+      min-width: 190px;
+      height: 42px;
+      font-size: $fontSize15;
+      line-height: 18px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@include mediaZr {
+  .uploadImage {
+
+    &__block {
+      width: 320px;
+    }
+
+    &__avatarBlock {
+      width: 220px;
+      height: 110px;
+    }
+
+    &__uploadAvatar {
+      align-items: center;
+    }
+  }
+}
+
+.form__disabled {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    right: -10px;
+    left: -10px;
+    background: rgba(247, 247, 247, 0.8);
+    border-radius: 40px;
+    z-index: 10;
+
+    @include mediaMax($screenMd) {
+      background: rgba(255, 255, 255, 0.8);
+      left: -50px;
+      right: -40px;
+    }
+  }
+}

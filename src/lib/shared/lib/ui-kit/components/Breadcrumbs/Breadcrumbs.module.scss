@@ -1,0 +1,164 @@
+@import 'lib/shared/styles/app.scss';
+
+.breadcrumbs {
+
+  @media print {
+    display: none;
+  }
+
+  font-size: $fontSize14;
+  letter-spacing: 0.08em;
+
+  &--words {
+    font-size: $fontSize12;
+    letter-spacing: 0.04em;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize12;
+      letter-spacing: 0.03em;
+    }
+
+    @include mediaMax(359px) {
+      font-size: $fontSize12;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  &--padding {
+    padding-top: 30px;
+  }
+
+  & button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  &__item {
+    height: 24px;
+    font-style: normal;
+    color: $orangeColor;
+
+    &--line {
+      text-decoration-line: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  &__link,
+  &__last {
+    font-family: $NunitoFontFamily;
+    font-weight: 400;
+    font-size: inherit;
+    line-height: 18px;
+    letter-spacing: inherit;
+    text-decoration: none;
+    text-decoration-line: none;
+  }
+
+  &__list,
+  &__link,
+  &__last,
+  &__return-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__list {
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    row-gap: 0;
+    margin: 0;
+  }
+
+  white-space:nowrap;
+
+  &__link {
+    color: $grayColor;
+
+    &__title {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      transition: .2s;
+      color: $orangeColorHover;
+
+      path {
+        transition: .2s;
+        stroke: $orangeColorHover;
+      }
+    }
+  }
+
+  &__last {
+    color: $darkGrayColor;
+
+    &--absolute {
+      position: absolute;
+    }
+  }
+
+  &__first {
+    span:first-of-type {
+      display: none;
+    }
+  }
+
+  &__return-link {
+    gap: 10px;
+    color: inherit;
+    font-family: $RubikFontFamily;
+    font-weight: 500;
+    font-size: $fontSize12;
+    line-height: 21px;
+    letter-spacing: 0.075em;
+    cursor: pointer;
+
+    &--doc {
+      gap: 8px;
+    }
+
+    &:hover {
+      transition: .2s;
+      color: $orangeColorHover;
+    }
+
+    &:not(&--doc) {
+      &:hover {
+        path {
+          transition: .2s;
+          stroke: $orangeColorHover;
+        }
+      }
+    }
+
+    &--doc {
+      &:hover {
+        path {
+          transition: .2s;
+          fill: $orangeColorHover;
+        }
+      }
+    }
+
+    @include mediaZr {
+      font-size: $fontSize12;
+      line-height: 18px;
+      letter-spacing: 0.04em;
+    }
+  }
+
+
+
+  &__return-title {
+    text-transform: uppercase;
+    font-family: $NunitoFontFamily;
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+}

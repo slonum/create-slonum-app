@@ -1,0 +1,52 @@
+@import 'lib/shared/styles/app.scss';
+
+.button-toggle {
+  width: 35px;
+  height: 60px;
+  padding: 0;
+  position: relative;
+  z-index: inherit;
+  border-radius: 10px;
+  background: none;
+  border: none;
+  transition: all 0.2s;
+
+  & svg {
+    width: 14px;
+    height: 8px;
+    transition: all 0.3s;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  &:hover,
+  &--active {
+    cursor: pointer;
+    background: $cabinetIconBackgroundColor;
+
+    & svg {
+      top: 40px;
+    }
+  }
+
+  &--mini {
+    @include mediaMax($screenMd) {
+      height: 40px;
+  
+      svg {
+        top: 16px;
+      }
+  
+      &:hover,
+      &.button-toggle--active {
+        & svg {
+          top: 26px;
+        }
+      }
+    }
+  }
+
+  
+}

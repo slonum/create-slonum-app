@@ -1,0 +1,65 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.menu {
+  position: relative;
+  z-index: 100;
+
+  &__button {
+    @include mediaMax($screenLg) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    width: 31px;
+    height: 22px;
+    position: relative;
+    z-index: 100;
+    margin: 9px 0;
+    border: 0;
+
+    @include mediaMin($screenLg) {
+      display: none;
+    }
+
+    &,
+    &::before,
+    &::after {
+      background-color: $darkColor;
+      height: 4px;
+      width: 31px;
+      transition: transform .4s cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+      left: 0;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -9px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -9px;
+    }
+
+    &--active {
+      background: rgba($color: #000000, $alpha: 0);
+
+      &::before {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

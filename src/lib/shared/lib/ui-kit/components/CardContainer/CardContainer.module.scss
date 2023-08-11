@@ -1,0 +1,15 @@
+@import 'lib/shared/styles/app.scss';
+
+.card {
+  padding: 30px;
+  background: $whiteColor;
+  box-shadow: 0 5px 30px $grayColorShadow;
+  border-radius: 15px;
+  position: relative;
+
+  &__title {
+     width: 100%;
+     text-align: left;
+     padding-bottom: 5px;
+  }
+}

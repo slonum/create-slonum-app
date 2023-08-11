@@ -1,0 +1,216 @@
+@import 'lib/shared/styles/app.scss';
+
+.form {
+  position: relative;
+  margin-bottom: 30px;
+
+  width: 100%;
+  max-width: 540px;
+
+  @include mediaMax($screenLg) {
+    padding: 0 50px;
+  }
+
+  @include mediaZr {
+    padding: 0 20px;
+  }
+
+  &_recoveryPassword {
+    width: 600px;
+    max-width: 600px;
+    padding: 0 50px;
+
+    @include mediaMax($screenMd) {
+      width: 100%;
+    }
+  }
+
+  &__participantTitle {
+    margin-bottom: 10px;
+  }
+
+  &--olymp {
+    max-width: 590px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  &__checkboxList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    &--auth {
+      margin-top: 0;
+    }
+
+    @include mediaMax($screenLg) {
+      div[class*='checkbox'] {
+        width: 100%;
+      }
+    }
+
+    @include mediaZr {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    // NOTE: <CheckboxBlock /> написан не совсем корректно, поэтому пока
+    // вставляем этот костыль
+    padding-left: 31px;
+  }
+
+  &__button {
+    position: relative;
+
+    width: 100%;
+    max-width: 300px;
+
+    &::before {
+      content: 'Заполните все поля формы';
+      position: absolute;
+      width: 80%;
+      height: 90%;
+      top: -110%;
+      left: 10%;
+      background: $redAdColor;
+      box-shadow: 0px 5px 30px rgba(215, 211, 225, 0.5);
+      border-radius: 8px;
+      padding: 7% 0;
+      line-height: 1.1;
+      opacity: 0;
+      transition: all 0.2s;
+
+      pointer-events: none;
+      font-family: $NunitoFontFamily;
+      font-style: normal;
+      font-weight: 600;
+      font-size: $fontSize16;
+      text-align: center;
+      letter-spacing: -0.005em;
+      color: #ffffff;
+
+      z-index: 999;
+
+      @include mediaMax($screenMd) {
+        padding: 4% 0;
+        font-size: $fontSize13;
+      }
+    }
+
+    &:disabled:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &--olymp {
+      @include mediaMax($screenLg) {
+        max-width: 100%;
+      }
+    }
+
+    @include mediaMax($screenSm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 0;
+
+    @include mediaMax($screenSm) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__wrapper {
+      &--olymp {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 20px;
+
+        @include mediaMax($screenLg) {
+          flex-direction: column-reverse;
+          gap: 30px;
+
+          padding-top: 30px;
+        }
+
+        @include mediaZr {
+          padding-top: 0;
+          gap: 0;
+        }
+      }
+    }
+
+    &--notEntry {
+      padding-top: 30px;
+    }
+
+    &--olymp--auth {
+      padding-top: 0 !important;
+    }
+
+    &--olymp {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 30px;
+
+      padding-top: 30px;
+
+      @include mediaMax($screenMd) {
+        flex-direction: column;
+      }
+
+      @include mediaMax($screenSm) {
+        gap: 10px;
+      }
+    }
+
+    &--part {
+      @include mediaMax($screenLg) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__leftButton {
+    display: block !important;
+  }
+
+  &__forgot {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: $grayColor;
+    font-size: $fontSize20;
+    font-family: $RubikFontFamily;
+
+    margin-top: -15px;
+    margin-left: auto;
+    margin-bottom: 40px;
+
+    &--olymp {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize14;
+    }
+
+    @include mediaZr {
+      font-size: $fontSize14;
+    }
+  }
+}

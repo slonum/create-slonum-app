@@ -1,0 +1,71 @@
+@import 'lib/shared/styles/app.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 540px;
+
+  padding-bottom: 20px;
+
+  @include mediaMax($screenLg) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &__password {
+    align-items: flex-start;
+    max-width: none;
+    width: 640px;
+
+    padding: 25px 50px;
+
+    @include mediaMax($screenLg) {
+      padding: 25px 80px;
+    }
+
+    @include mediaMax($screenMd) {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      padding: 25px 20px;
+    }
+  }
+
+  &__inputs {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    &_password {
+      margin: 0;
+    }
+  }
+
+  &__forgotPassword {
+    align-self: flex-end;
+
+    h4 {
+      font-family: $RubikFontFamily;
+      color: $grayColor;
+      font-weight: 400;
+
+      text-decoration: underline;
+
+      @include mediaMax($screenMd) {
+        font-size: $fontSize16;
+      }
+    }
+
+    margin-top: -40px;
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+    @include mediaMax($screenMd) {
+      margin-top: -30px;
+    }
+  }
+}

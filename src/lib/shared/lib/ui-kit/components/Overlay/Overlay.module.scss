@@ -1,0 +1,29 @@
+.overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 100vw;
+  height: 100vh;
+  z-index: 10008;
+  background: rgba(31, 29, 42, 0.7);
+  cursor: pointer;
+  animation: popup-appearance .2s;
+}
+
+@keyframes popup-appearance {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.story {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+}

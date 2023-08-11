@@ -1,0 +1,10 @@
+@import 'lib/shared/styles/app.scss';
+
+.svg {
+  &:hover {
+    cursor: pointer;
+    & path {
+      stroke: $darkGrayColor;
+    }
+  }
+}

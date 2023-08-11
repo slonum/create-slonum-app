@@ -1,0 +1,102 @@
+@import 'lib/shared/styles/app.scss';
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //width: 100%;
+  width: 720px;
+
+  padding: 50px;
+
+  @include mediaMax($screenLg) {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  @include mediaZr {
+    padding: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 50px;
+    row-gap: 30px;
+
+    max-width: 500px;
+
+    @include mediaMax($screenLg) {
+      max-width: 425px;
+    }
+
+    @include mediaZr {
+      max-width: 270px;
+    }
+  }
+
+  &__listItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover>.popup__name {
+      color: $orangeColor;
+    }
+  }
+
+  &__avatar {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize14;
+    color: $grayColor;
+    font-weight: 700;
+  }
+
+  &__plus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 5px;
+    padding: 18px 26px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 16px;
+      background-color: $grayColor;
+      border-radius: 2px;
+    }
+
+    //padding: 26px 18px;
+
+    &::after {
+      content: '';
+      width: 2px;
+      height: 16px;
+      background-color: $grayColor;
+      border-radius: 2px;
+      transform: rotate(90deg);
+    }
+  }
+}

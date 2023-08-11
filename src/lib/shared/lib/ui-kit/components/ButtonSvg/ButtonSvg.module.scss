@@ -1,0 +1,46 @@
+@import 'lib/shared/styles/app.scss';
+
+.button {
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  transition: all 0.2s;
+
+  font-family: $NunitoFontFamily;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $darkGrayColor;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  & span {
+    height: 12px;
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+
+    path {
+      transition: all 0.2s;
+      stroke: $greenColor;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $orangeColor;
+
+    & svg {
+      path {
+        stroke: $orangeColor;
+      }
+    }
+  }
+}

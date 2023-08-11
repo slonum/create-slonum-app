@@ -1,0 +1,127 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.video {
+  &__overlay {
+    position: relative;
+    aspect-ratio: 1395 / 780;
+    height: auto;
+    max-width: 1395px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 40px;
+
+    &::before {
+      border-radius: 40px;
+      z-index: 5;
+      position: absolute;
+      content: '';
+      aspect-ratio: inherit;
+      width: inherit;
+      height: inherit;
+      background-color: rgba($darkColor, 0.7);
+    }
+
+    @include mediaMax($screenLg) {
+
+      border-radius: 10px;
+
+      &::before {
+
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__overlay--active {
+    &::before {
+      z-index: 1;
+      background-color: transparent;
+    }
+  }
+
+  &__iframe,
+  &__thumbnail {
+    border: 0;
+    position: absolute;
+    aspect-ratio: inherit;
+    width: inherit;
+    height: inherit;
+  }
+
+  &__iframe {
+    border-radius: 40px;
+
+    @include mediaMax($screenLg) {
+      border-radius: 10px;
+    }
+  }
+
+  &__iframe--active {
+    z-index: 2;
+  }
+
+  &__thumbnail {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0px -80px;
+    transform: scale(1.1);
+
+    @include mediaMax($screenLg) {
+      object-position: 0px -65px;
+    }
+
+    @include mediaMax($screenMd) {
+      object-position: 0px -60px;
+    }
+
+    @include mediaZr {
+      object-position: 0px -35px;
+    }
+  }
+
+  &__thumbnail--inactive {
+    z-index: 0;
+  }
+
+  &__button {
+    border-radius: 50%;
+    position: absolute;
+    content: '';
+    z-index: 5;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    transition: scale .2s, opacity .1s .4s;
+
+    &:hover {
+      scale: 1.16;
+    }
+
+    width: 150px;
+    height: 150px;
+
+    @include mediaMax($screenLg) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include mediaMax($screenMd) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include mediaMax($screenSm) {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  &__button--inactive {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

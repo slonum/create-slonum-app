@@ -1,0 +1,127 @@
+@import 'lib/shared/styles/app.scss';
+
+@keyframes message-popup-pc {
+	0% {
+		bottom: -117px;
+	}
+	7% {
+		bottom: 70px;
+	}
+	99% {
+		opacity: 1;
+		bottom: 70px;
+	}
+	100% {
+		// opacity: 0;
+		bottom: 70px;
+	}
+}
+@keyframes message-popup-mobile {
+	0% {
+		bottom: -80px;
+	}
+	7% {
+		bottom: 30px;
+	}
+	99% {
+		opacity: 1;
+		bottom: 30px;
+	}
+	100% {
+		// opacity: 0;
+		bottom: 30px;
+	}
+}
+.messagePopup {
+	width: 542px;
+	min-height: 117px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 25px 50px;
+	font-family: $RubikFontFamily;
+	font-size: $fontSize22;
+	@include mediaMax($screenMd){
+		height: 80px;
+		width: 320px;
+		padding: 30px 13px 30px 18px;
+		font-size: $fontSize13;
+	}
+  &--delete {
+    height: 130px;
+    @include mediaMax($screenMd){
+      height: 100px;
+     padding: 15px;
+    }
+  }
+	&__wrapper {
+		position: fixed;
+		left: 50%;
+		transform: translate(-50%, 0);
+		overflow: hidden;
+		background-color: $whiteColor;
+		box-shadow: 0px 5px 30px $grayColorShadow;
+		z-index: 99999;
+		border-radius: 20px;
+		animation: message-popup-pc 4.3s ease-out 1 forwards;
+		@include mediaMax($screenMd){
+			animation: message-popup-mobile 4.3s ease-out 1 forwards;
+		}
+	}
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 36px;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+    p {
+      margin: 0;
+    }
+    @include mediaMax($screenMd){
+      gap: 18px;
+    }
+	}
+	&__tick {
+		display: block;
+		width: 39px;
+		-webkit-user-drag: none;
+    @include mediaMax($screenMd){
+      width: 30px;
+    }
+	}
+  &__link{
+    color: $orangeColor;
+  }
+
+  &__hover {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize22;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: $grayColor;
+    display: flex;
+  }
+
+  &__hoverText {
+    margin-right: 30px;
+
+    &-yes {
+      margin-left: 15px !important;
+    }
+
+    @include mediaMax($screenMd){
+      margin-right: 20px;
+      font-size: 16px
+    }
+  }
+
+  &__hoverText:hover {
+    color: $greenColor;
+    cursor: pointer;
+  }
+}

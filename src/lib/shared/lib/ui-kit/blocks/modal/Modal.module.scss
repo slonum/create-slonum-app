@@ -1,0 +1,84 @@
+@import 'lib/shared/styles/app.scss';
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100007;
+  animation: popup-appearance .3s;
+
+  &__container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 109;
+    border-radius: 40px;
+    background-color: $whiteColor;
+
+    @include mediaMax($screenLg) {
+      border-radius: 24px;
+
+    }
+
+    &--mob-bottom {
+      @include mediaMax($screenMd) {
+        border-radius: 0;
+        width: 100%; 
+        top: auto; 
+        bottom: 0;
+        transform: translate(0, 0);
+        left: 0;
+      }
+    }
+  }
+
+  &__close {}
+
+  &__overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 108;
+    background-color: $darkColor;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+@keyframes popup-appearance {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.swipe {
+  padding: 10px 0;
+  margin: auto;
+  width: 100%;
+  cursor: grab;
+  display: none;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: auto;
+    background: #e2e3e6;
+    border-radius: 4px;
+  }
+
+  @include mediaMax($screenMd) {
+    display: block;
+  }
+}

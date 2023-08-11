@@ -1,0 +1,213 @@
+@import 'lib/shared/styles/app.scss';
+
+
+.checkbox {
+  &--isSubBlock {
+    margin-left: 0;
+
+    .checkbox__label {
+      padding-left: 0;
+    }
+  }
+
+  &__label {
+    //width: 430px;
+    text-align-last: left;
+    display: inline-block;
+    position: relative;
+    font-family: $RubikFontFamily;
+    font-weight: 400;
+    font-size: $fontSize14;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    color: $grayFontColor;
+  }
+
+  &__label--gray {
+    font-family: $RubikFontFamily;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    color: $grayColor;
+  }
+
+  &__label--black {
+    font-family: $RubikFontFamily;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: $darkGrayColor;
+  }
+
+  &__label--header {
+    top: -30px;
+    left: 5px;
+    width: 273px;
+    white-space: normal !important;
+  }
+
+  &__input {
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0px;
+    left: -32px;
+
+    &::before {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid $greenColor;
+      background-color: $whiteColor;
+      border-radius: 6px;
+    }
+
+    &:checked::before {
+      background-color: $greenColor;
+    }
+  }
+
+  &__tick {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 15px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    letter-spacing: 0.07em;
+    text-decoration: underline;
+  }
+
+  &__link--green {
+    color: $greenColor;
+  }
+
+  &__link--white {
+    color: $whiteColor;
+  }
+
+  &__link--gray {
+    color: $grayColor;
+  }
+}
+
+@include mediaZr {
+  .checkbox {
+    &__label {
+      font-size: $fontSize9;
+      line-height: 11px;
+      padding-left: 24px;
+    }
+
+    &__input {
+      width: 16px;
+      height: 16px;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+      }
+    }
+
+    &__tick {
+      height: 5px;
+      width: 9px;
+    }
+  }
+}
+
+@include mediaMax($screenLg) {
+  .checkbox {
+    width: 302px;
+
+    &--isSubBlock {
+      margin-left: 0;
+
+      .checkbox__label {
+        padding-left: 0;
+      }
+    }
+
+    &--subscription {
+      .checkbox__input {
+        top: -5px;
+      }
+
+      .checkbox__tick {
+        top: 1px;
+      }
+    }
+
+    &__label--header {
+      left: -60px;
+      top: -35px;
+      width: 350px;
+    }
+  }
+}
+
+@include mediaMax($screenMd) {
+  .checkbox__label {
+    font-size: $fontSize13;
+  }
+
+  .checkbox__input {
+    left: -28px;
+  }
+
+  .checkbox__tick {
+    left: -24px;
+  }
+
+
+  .checkbox {
+    &__label--header {
+      left: -15px;
+      top: -120px;
+
+      width: 300px;
+      display: none;
+    }
+  }
+}
+
+@include mediaMax($screenSm) {
+
+  .checkbox__label {
+    font-size: $fontSize13;
+    line-height: 1.2;
+    padding-left: 0;
+  }
+
+  .checkbox__input {
+    width: 20px;
+    height: 20px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+    }
+  }
+
+  .checkbox__tick {
+    width: 10px;
+    height: 6px;
+    left: -23px;
+    top: 7px;
+  }
+}

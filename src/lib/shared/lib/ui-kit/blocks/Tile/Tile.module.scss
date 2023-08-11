@@ -1,0 +1,138 @@
+@import 'lib/shared/styles/app.scss';
+
+.tile {
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--strengths {
+    width: 420px;
+    height: 378px;
+    padding: 37px 37px 40px;
+    box-shadow: 0 5px 30px 0 $grayColorShadow;
+    border: 2px solid $strengthsTilesBorderColor;
+  }
+
+  &--principles {
+    width: 360px;
+    height: 299px;
+
+    @include media($screenLg, 1200px) {
+      width: 300px;
+    }
+  }
+
+  @include mediaMax($screenEx) {
+    width: 300px;
+    height: 390px;
+    padding: 37px 20px 40px;
+  }
+
+  @include mediaMax($screenLg) {
+    width: 320px;
+    height: min-content;
+    padding: 37px 40px 40px;
+  }
+
+  @include mediaZr {
+    border-radius: 10px;
+  }
+
+  &--olymp {
+    width: 100%;
+    max-width: 440px;
+    min-height: 400px;
+    padding: 30px 30px 36px 30px;
+    align-items: flex-start;
+    box-shadow: 0 5px 30px 0 $grayColorShadow;
+
+    @include mediaMax($screenSm) {
+      min-height: 258px;
+      padding: 20px;
+    }
+  }
+
+  &__img {
+    width: 140px;
+    height: 140px;
+
+    &--olymp {
+      min-width: 80px;
+      min-height: 80px;
+      max-width: 80px;
+      max-height: 80px;
+
+      margin-bottom: 20px;
+
+      @include mediaMax($screenSm) {
+        min-width: 60px;
+        min-height: 60px;
+        max-width: 60px;
+        max-height: 60px;
+      }
+    }
+  }
+
+  &__title {
+    color: $greenColor;
+    text-align: center;
+
+    @include mediaMax($screenEx) {
+      font-size: $fontSize24;
+      line-height: 33px;
+    }
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize20;
+    }
+
+    &--principles {
+      margin-top: 30px;
+
+      @include mediaMax($screenLg) {
+        margin-top: 15px;
+      }
+    }
+
+    &--olymp {
+      color: $darkColor;
+      font-size: $fontSize20;
+      margin-bottom: 5px;
+      line-height: 27px;
+
+      @include mediaMax($screenSm) {
+        font-size: $fontSize14;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $RubikFontFamily;
+    font-size: $fontSize20;
+    line-height: 1.5;
+    text-align: center;
+    margin: 5px 0 0 0;
+    letter-spacing: 0.05em;
+    color: $darkGrayColor;
+
+    width: 100%;
+    max-width: 380px;
+
+    //@include mediaMax($screenEx) {
+    //  font-size: $fontSize16;
+    //  line-height: 24px;
+    //}
+
+    &--olymp {
+      font-size: $fontSize20;
+      text-align: left;
+      line-height: 1.5;
+      letter-spacing: 0;
+
+      @include mediaMax($screenSm) {
+        font-size: $fontSize14;
+      }
+    }
+  }
+}

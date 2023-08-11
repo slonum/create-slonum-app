@@ -1,0 +1,257 @@
+@import 'lib/shared/styles/app.scss';
+
+.event {
+  position: relative;
+  display: flex;
+  padding: 30px 30px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-size: cover;
+  text-decoration: none;
+ 
+
+  @include mediaMax($screenSm) {
+    padding: 15px 10px; 
+  }
+ 
+   
+
+  &__category {
+    color: $whiteColor;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize22;
+    margin: 0; 
+
+    @include mediaMax($screenEx) {
+      line-height: $fontSize14;
+      font-size: $fontSize14;
+    }
+
+    @include mediaMax($screenSm) {
+      font-size: $fontSize11;
+      line-height: $fontSize11;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 10px;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize45;
+    line-height: 1;
+    font-weight: 500;
+    color: $eventTitleColor;
+
+    @include mediaMax($screenEx) {
+      padding-top: 10px;
+      font-size: $fontSize30;
+    }
+
+    @include mediaMax($screenMd) {
+      font-size: 24px;
+    }
+
+    @include mediaMax($screenSm) {
+      font-size: 20px;
+      padding-top: 5px;
+    }
+  }
+
+  &__phrases {
+    margin-top: 15px;
+    display: flex;
+    max-width: 415px;
+    gap: 15px;
+
+    @include mediaMax($screenEx) {
+      margin-top: 5px;
+    }
+
+    @include mediaMax($screenSm) {
+      gap: 5px;
+    }
+  }
+
+  &__phrase {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: $whiteColor;
+    font-family: $RubikFontFamily;
+    font-weight: 500;
+    font-size: $fontSize15;
+
+    @include mediaMax($screenEx) {
+      font-size: $fontSize12;
+      gap: 9px;
+    }
+
+    @include mediaMax($screenSm) {
+      font-size: $fontSize9;
+      gap: 5px;
+    }
+  }
+
+  &__phraseText {
+    margin: 0;
+
+    @include mediaMax($screenEx) {
+      width: 100px;
+    }
+
+    @include mediaMax($screenMd) {
+      width: 60px;
+    }
+  }
+
+  &__annotation {
+    padding: 10px 30px;
+    max-width: max-content;
+    margin-top: 15px;
+    display: block;
+    font-size: $fontSize18;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    white-space: nowrap; 
+    background-color: $whiteColor;
+    border-radius: 6px;
+
+    @include mediaMax($screenEx) {
+      padding: 5px 14px;
+      max-width: 250px;
+      font-size: $fontSize12;
+    }
+
+    @include mediaMax($screenLg) {
+      margin-top: 15px;
+    }
+
+    @include mediaMax($screenSm) {
+      font-size: $fontSize10;
+      padding: 5px 10px; 
+    }
+  }
+
+  &__elephant {
+    path:nth-of-type(3) {
+      fill: #000000;
+    }
+
+    margin-top: 15px;
+    width: 200px;
+    z-index: 2;
+
+    @include mediaMax($screenEx) {
+      width: 120px;
+      margin-top: 10px;
+    }
+
+    @include mediaMax($screenSm) {
+      width: 100px;
+      margin-top: 10px;
+    }
+  }
+
+  &__leftCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    z-index: 2;
+
+    @include mediaMax($screenEx) {
+      width: 280px;
+    }
+
+    @include mediaMax($screenSm) {
+      width: 190px;
+    }
+  }
+
+  &__rightCol {
+    position: relative;
+  }
+
+  &__logo {
+    position: absolute;
+    top: -20px;
+    left: 120px;
+
+    @include mediaMax($screenEx) {
+      left: 45px;
+      top: -30px;
+      transform: scale(0.8);
+    }
+
+    @include mediaMax($screenSm) {
+      left: 35px;
+      top: -20px;
+      transform: scale(0.5);
+    }
+  }
+
+  &__age {
+    position: absolute;
+    bottom: -15px;
+    left: 190px;
+
+    @include mediaMax($screenEx) {
+      left: 110px;
+      bottom: -25px;
+      transform: scale(0.8);
+    }
+
+    @include mediaMax($screenSm) {
+      left: 85px;
+      bottom: -20px;
+      transform: scale(0.5);
+    }
+  }
+}
+
+.dev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: $grayNeutral;
+  border-radius: 20px;
+
+  &__icon {
+    width: 80px;
+
+    @include mediaMax($screenLg) {
+      width: 60px;
+    }
+
+    @include mediaMax($screenSm) {
+      width: 45px;
+    }
+  }
+
+
+  &__text {
+    padding-bottom: 5px;
+    font-family: $RubikFontFamily;
+    font-size: $fontSize16;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: $grayColor;
+
+    @include mediaMax($screenLg) {
+      font-size: $fontSize14;
+      padding: 0;
+    }
+
+    @include mediaMax($screenSm) {
+      font-size: $fontSize13;
+    }
+  }
+
+}

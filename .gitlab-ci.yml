@@ -1,0 +1,9 @@
+include:
+  - project: 'slonum/infrastructure'
+    ref: main
+    file:
+      - 'ci-templates/next.yml'
+
+variables:
+  PROJECT_NAME: slonum-fraction-calculator-frontend
+  SUBDOMAIN: fraction-calculator.

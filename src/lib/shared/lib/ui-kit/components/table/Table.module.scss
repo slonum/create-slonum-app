@@ -1,0 +1,70 @@
+@import 'lib/shared/styles/app.scss';
+
+.table { 
+ 
+    padding: 0; 
+    @include mediaMax($screenSm) {
+      width: 320px;
+      margin: auto;
+    }
+
+    &__title {
+      @include mediaMax($screenSm) {
+       text-align: center;
+      }
+    }
+
+  &__row {
+    display: flex;
+    height: 60px;
+
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fontSize16;
+    line-height: 1.5;
+    color: $darkGrayColor;
+
+    &:first-child,
+    &--head,
+    &--accent {
+      font-weight: 700;
+    }
+
+    &--accent {
+       color: $accentLineColor;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $grayLightColor;
+    }
+
+    @include mediaMax($screenSm) {
+      font-size: $fontSize13;
+      width: 320px;
+    }
+  }
+
+  &__cell {
+    padding: 0 30px;
+    height: 100%;
+    align-items: center; 
+    display: flex; 
+    width: 0;
+    &:last-child {
+      flex-grow: 1;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $grayLightColor;
+    }
+
+    @include mediaMax($screenMd) {
+      padding: 0 20px;
+    }
+
+    @include mediaMax($screenSm) {
+      justify-content: center;
+     }
+  }
+}

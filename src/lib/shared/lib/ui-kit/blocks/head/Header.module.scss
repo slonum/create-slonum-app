@@ -1,0 +1,95 @@
+@import 'lib/shared/styles/app.scss';
+
+.header {
+  position: relative;
+  background-color: #fff;
+
+  &,
+  &__wrapper,
+  &__inner {
+    height: 80px;
+
+    @include mediaMax($screenMd) {
+      height: 70px;
+    }
+  }
+
+  &__ref {
+    position: absolute;
+    top: 200px;
+
+    @include mediaMax($screenMd) {
+      top: 80px;
+    }
+  }
+
+  &__wrapper {
+    // position: fixed;
+    z-index: 100000;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+
+    &--sticky {
+      position: fixed;
+      //   visibility: visible;
+      //   opacity: 1;
+    }
+
+    &-border {
+      border-bottom: 1px solid #E8F0EA;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include mediaMax($screenGt) {
+      justify-content: flex-end;
+    }
+
+    @include mediaMax($screenMd) {
+      padding: 20px;
+    }
+  }
+
+  &__logo {
+    display: block;
+
+    @include mediaMax($screenGt) {
+      margin-right: auto;
+    }
+  }
+
+  &__authBtn {
+    width: 178px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid $darkColor;
+    border-radius: 15px;
+    font-weight: 500 !important;
+  }
+
+  &__burger {
+    @include mediaMin($screenGt) {
+      display: none;
+    }
+  }
+
+  &__burger-auth {
+    @include mediaMax($screenLg) {
+      display: none;
+    }
+  }
+}
+
+.auth {
+  &__unlogged {
+    @include mediaMax($screenMd) {
+      display: none;
+    }
+  }
+}

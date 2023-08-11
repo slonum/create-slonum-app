@@ -1,0 +1,40 @@
+@import 'lib/shared/styles/app.scss';
+
+.accordion {
+  &__button {
+    border: none;
+    background: none;
+    width: 100%;
+    gap: 5px;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: $grayColor; 
+    border-bottom: 1px solid transparent;
+
+    &,
+    svg,
+    path {
+      transition: .2s;
+    }
+
+    svg {
+      transform-origin: 50% 50%;
+    }
+
+    &--open {
+      border-bottom: 1px solid $headerBorderColor;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+}
+
+ 

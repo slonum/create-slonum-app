@@ -1,0 +1,217 @@
+@import 'lib/shared/styles/app.scss';
+
+.bar {
+  position: relative;
+
+  &__bg {
+    fill: none;
+    stroke-width: 10px;
+    stroke: #EDF1FC;
+  }
+
+  &__progress {
+    fill: none;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke-dasharray: 314;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 47px 0;
+    position: absolute;
+    top: 0;
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $fontSize25;
+    line-height: 35px;
+    text-align: center;
+
+    &--mini {
+      padding: 30px 0;
+      font-size: $fontSize16;
+      line-height: 22px;
+    }
+  }
+}
+
+.color {
+  &__light-green {
+    color: #2ACD5C;
+    text-shadow: 0px 15px 30px rgba(64, 177, 82, 0.25);
+  }
+
+  &__light-blue {
+    color: $lightBlue
+  }
+
+  &__violet {
+    color: $greenColor
+  }
+}
+
+.circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__bg {
+    fill: none;
+    stroke: #EDF1FC;
+  }
+
+  &__progress {
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 257.48;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  &--light-green {
+    box-shadow: 0px 15px 30px rgba(64, 177, 82, 0.25);
+  }
+
+  &--light-blue {}
+
+  &--violet {}
+
+  &__text {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: $NunitoFontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $fontSize16;
+    line-height: 22px;
+  }
+}
+
+.big {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__progress {
+    fill: none;
+    stroke-dasharray: 578;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  &__text {
+    flex-direction: column;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 0.04em;
+
+    & span {
+      margin-top: -4px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
+.diagram {
+  &__columns {
+    gap: 40px;
+    justify-content: left;
+    align-items: flex-end;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 29px;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background-color: #E6E6E6;
+    }
+
+    @include mediaMax($screenLg) {
+      gap: 20px;
+    }
+
+    @include mediaMax($screenSm) {
+      gap: 8px;
+    }
+  }
+
+  &__column {
+    color: #828282;
+
+    flex-direction: column;
+    gap: 10px;
+
+    & :first-child {
+      width: 50px;
+      text-align: center;
+    }
+
+    & div {
+      width: 60px;
+      background: #EDF1FC;
+      border-radius: 2px 2px 0px 0px;
+    }
+
+    @include mediaMax($screenLg) {
+      & div {
+        width: 50px; 
+      }
+    }
+
+    @include mediaMax($screenMd) {
+      & :first-child,
+      & div {
+        width: 40px;
+         
+      }
+    }
+
+    &--blue {
+      color: $lightBlue;
+      & div {
+        background: $lightBlue;
+      }
+    }
+
+    &--orange {
+      color: $accentLineColor;
+      & div {
+        background: $accentLineColor;
+      }
+    }
+
+  }
+
+  &__caption {
+    font-family: $RubikFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fontSize14;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+
+    @include mediaMax($screenMd) {
+      font-size: $fontSize11;
+    }
+
+    &:first-child { 
+      line-height: 17px;
+    }
+  }
+}

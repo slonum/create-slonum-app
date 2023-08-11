@@ -1,0 +1,69 @@
+
+.elephant {
+
+  &__pencil {
+    animation: 4.5s ease 0.2s infinite both write;
+
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes write {
+
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  12% {
+    transform: translate(0px, 0px) rotate(74deg);
+  }
+
+  24% {
+    transform: translate(0px, 0px) rotate(66deg);
+  }
+
+  32% {
+    transform: translate(0px, 0px) rotate(68deg);
+  }
+
+  40% {
+    transform: translate(0px, 0px) rotate(66deg);
+  }
+
+  43% {
+    transform: translate(0px, 0px) rotate(66deg);
+  }
+
+  53% {
+    transform: translate(-5px, -4px) rotate(-17deg);
+  }
+
+  60% {
+    transform: translate(0px, 0px) rotate(5deg);
+  }
+
+  67% {
+    transform: translate(0px, 0px) rotate(-5deg);
+  }
+
+  74% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  84% {
+    transform: translate(2px, 13px) rotate(21deg);
+  }
+
+  90% {
+    transform: translate(2px, 5px) rotate(21deg);
+  }
+
+  95% {
+    transform: translate(2px, 10px) rotate(21deg);
+  }
+
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}

@@ -1,0 +1,104 @@
+@import 'lib/shared/styles/app.scss';
+
+.popup {
+  width: max-content;
+  height: max-content;
+  padding: 71px 68.5px;
+  position: relative;
+  flex-direction: column;
+
+  &,
+  &__content,
+  &__buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__content {
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  &__title,
+  &__text {
+    padding: 0 35px;
+    text-align: center;
+  }
+
+  &__title {
+    @include mediaMax($screenLg) {
+      padding: 0;
+      font-size: $fontSize20;
+      line-height: 27px;
+      max-width: 240px;
+    }
+  }
+
+  &__buttons {
+    @include mediaMax($screenLg) {
+      flex-direction: column;
+      gap: 15px;
+      button {
+        min-width: 155px;
+        height: 36px;
+      }
+    }
+    
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: -10px;
+    max-width: 630px;
+    width: 100%;
+    padding: 0;
+
+    font-family: $RubikFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fontSize18;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $trainingFontColor;
+
+    @include mediaMax($screenLg) {
+      max-width: 400px;
+      margin-top: -20px;
+      padding: 0;
+      font-size: $fontSize13;
+      line-height: 19px;
+    }
+
+    @include mediaMax($screenMd) {
+      max-width: 280px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 254px;
+    height: 176px;
+    //
+    top: -125px;
+
+    @include mediaMax($screenLg) {
+      width: 145px;
+      height: 100px;
+      top: -71px;
+    }
+
+  }
+
+  @include mediaMax($screenLg) {
+    padding: 30px 20px;
+    width: 320px !important;
+    min-height: 220px !important;
+    height: max-content !important;
+  }
+
+  @include mediaMax($screenSm) {
+    border-radius: 15px;
+  }
+}

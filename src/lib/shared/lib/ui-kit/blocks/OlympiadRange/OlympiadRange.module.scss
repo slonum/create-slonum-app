@@ -1,0 +1,29 @@
+@import 'lib/shared/styles/app.scss';
+
+.range {
+  margin: 0;
+  font-family: $RubikFontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fontSize16;
+  line-height: 19px;
+  color: $darkGrayColor;
+
+  @include mediaMax($screenMd) {
+    font-size: $fontSize14;
+    line-height: 17px;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid $grayColor;
+
+    &:first-of-type {
+      border-top: 1px solid $grayColor;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import 'lib/shared/styles/app.scss';
+
+.left,
+.right {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+
+  @include mediaMax($screenMd) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.left {
+  animation: .4s ease-in-out both aLeft;
+
+  @keyframes aLeft {
+    0% {
+      top: 30%;
+      left: 85px;
+    }
+
+    100% {
+      top: 15px;
+      left: 0;
+    }
+  }
+}
+
+.right {
+  animation: .4s ease-in-out both aRight;
+
+  @keyframes aRight {
+    0% {
+      top: 30%;
+      right: 85px;
+    }
+
+    100% {
+      top: 15px;
+      right: 0;
+    }
+  }
+}
+
+
+.a__l,
+.a__r {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.a__l {
+  animation: .5s ease-in-out both rotateLeft;
+
+  @keyframes rotateLeft {
+    0% {
+      transform: rotate(-30deg)
+    }
+
+    100% {
+      transform: rotate(0deg)
+    }
+  }
+}
+
+
+
+.a__r {
+  animation: .5s ease-in-out both rotateRight;
+
+  @keyframes rotateRight {
+    0% {
+      transform: rotate(30deg)
+    }
+
+    100% {
+      transform: rotate(0deg)
+    }
+  }
+}

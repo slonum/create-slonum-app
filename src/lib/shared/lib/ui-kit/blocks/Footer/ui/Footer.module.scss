@@ -1,0 +1,284 @@
+@import 'lib/shared/styles/app.scss';
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media print {
+    display: none;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    padding: 67px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    @include mediaMax(1500px) {
+      padding-inline: 20px;
+    }
+  }
+
+  &__block {
+    max-width: 200px;
+  }
+
+  &__title,
+  &__logo {
+    display: block;
+    margin-bottom: 15px;
+
+    >div {
+      justify-content: flex-start;
+    }
+
+    @include mediaMax($screenLg) {
+      text-align: center;
+
+      >div {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__mail {
+    @include mediaMax($screenLg) {
+      text-align: center;
+    }
+  }
+
+
+  &__social {
+    max-width: min-content;
+  }
+
+  &__socialList {
+    max-width: min-content;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 22px;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  &__socialIcons {
+    display: grid;
+    grid-template: 1fr 1fr / repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  &__socialItem {
+    width: 34px;
+    height: 35px;
+
+    a {
+      display: block;
+
+      img {
+        width: 34px;
+        height: 35px;
+      }
+    }
+  }
+
+  &__navList {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    margin-top: 23px;
+    white-space: nowrap;
+  }
+
+  &__upText,
+  &__socialList {
+    color: $darkGrayColor;
+    font-family: $NunitoFontFamily;
+    letter-spacing: 0.03em;
+    line-height: 27px;
+    margin-bottom: 9px;
+  }
+
+  &__upText {
+    margin: 0 0 9px 0;
+  }
+
+  &__upWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 181px;
+  }
+
+  &__up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__upButtonWrapper {
+    border-radius: 50%;
+    box-shadow: 0 15px 30px 0 $buttonUpShadowColor;
+  }
+
+  &__upButton {
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: $orangeColor;
+    position: relative;
+  }
+
+  &__copyright {
+    display: flex;
+    font-family: $NunitoFontFamily;
+    color: $grayColor;
+    font-size: $fontSize16;
+    line-height: 22px;
+    white-space: nowrap;
+    padding: 0 0 30px 0;
+    gap: 30px;
+
+    br {
+      display: none;
+    }
+
+    @include mediaMax(1500px) {
+      padding-left: 20px;
+    }
+
+    @include mediaMax($screenLg) {
+      padding-left: 0;
+    }
+  }
+
+  &__copyrightLink {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+@include mediaMax($screenEx) {
+  .footer {
+    &__social {
+      max-width: 150px;
+    }
+
+    &__socialList {
+      max-width: 200px;
+    }
+
+    &__socialIcons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    &__upWrapper {
+      max-width: 150px;
+    }
+  }
+}
+
+@include mediaMax($screenLg) {
+  .footer {
+    &__inner {
+      padding: 40px 15px 0;
+      gap: 50px;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    &__copyright {
+      flex-direction: column;
+      align-items: center;
+
+      br {
+        display: block;
+      }
+
+      p,
+      &Link {
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@include mediaMax($screenMd) {
+  .footer {
+
+    &__social,
+    &__upWrapper,
+    &__nav {
+      flex: 0 0 0;
+    }
+
+    &__nav {
+      min-width: none;
+    }
+
+    &__socialList {
+      column-gap: 10px;
+    }
+
+    &__copyright {
+      font-family: $NunitoFontFamily;
+      flex-direction: column;
+      line-height: 19px;
+      font-size: $fontSize14;
+      bottom: -100px;
+      white-space: normal;
+      width: 200px;
+
+      &::first-line {
+        white-space: nowrap;
+      }
+    }
+
+    &__upWrapper {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 10px;
+  margin-top: 10px;
+
+  @include mediaMax($screenLg) {
+    align-items: center;
+  }
+}
+
+.navItem {
+  font-family: $NunitoFontFamily;
+  font-size: $fontSize16;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+
+  a {
+    color: inherit;
+  }
+
+  &--donation {
+    padding: 11px 20px;
+    color: $greenColor;
+    font-weight: 700;
+    background-color: $lightGreenColor;
+    border-radius: 10px;
+  }
+}

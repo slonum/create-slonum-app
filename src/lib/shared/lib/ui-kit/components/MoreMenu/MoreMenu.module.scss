@@ -1,0 +1,61 @@
+@import 'lib/shared/styles/app.scss';
+
+.more {
+  max-width: min-content;
+  margin-block: auto;
+  &__button {
+    position: relative;
+    width: 24px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__menu {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s;
+    background-color: white;
+    width: 285px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 30px 0px $grayColorShadow;
+    &--bottom {
+      top: calc(100% + 5px);
+    }
+    &--top {
+      bottom: calc(100% + 10px);
+    }
+    @include mediaMax($screenMd) {
+      width: 240px;
+    }
+  }
+  &__menu--open {
+    transition: opacity 0.5s;
+    opacity: 1;
+    max-height: unset;
+    z-index: 20;
+  }
+  &__menuItem {
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+    font-family: $NunitoFontFamily;
+    font-size: $fontSize18;
+    line-height: normal;
+    letter-spacing: 0.9px;
+    transition: background-color 0.2s;
+    text-align: start;
+    &:hover {
+      background-color: rgba($disableFontColor, 0.5);
+    }
+    @include mediaMax($screenMd) {
+      font-size: $fontSize12;
+    }
+  }
+  &__menuItem:not(:first-of-type) {
+    border-top: 1px solid $disableFontColor;
+  }
+}

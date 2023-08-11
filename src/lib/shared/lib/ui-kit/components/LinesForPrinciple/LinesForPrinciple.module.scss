@@ -1,0 +1,32 @@
+@import 'lib/shared/styles/app.scss';
+
+.lines {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 162px;
+
+  &__line {
+    height: 2px;
+    width: 158px;
+    background: $wordsListBackgroundColor;
+    top: 0;
+
+    &-left {
+      left: 360px;
+      position: relative;
+    }
+
+    &-right {
+      right: 360px;
+      position: relative;
+    }
+  }
+}
+
+@include mediaMax($screenEx) {
+  .lines {
+      display: none;
+  }
+}
