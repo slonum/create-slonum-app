@@ -35,7 +35,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Калькулятор дробей - СлонУм</title>
+        <title>ЗАГОЛОВОК</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
