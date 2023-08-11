@@ -1,11 +1,9 @@
-# Модуль конкурса рисунков
+# Шаблон модуля
 
 ## Getting started
-Первоначальная настройка
+Установка 
 ```
-git clone https://gitlab.com/slonum/slonum-fraction-calculator-frontend.git
-cd slonum-fraction-calculator-frontend
-npm ci
+npx create-next-app . -e https://github.com/slonum/create-slonum-app
 ```
 ## ENV переменные
 - NEXT_PUBLIC_NODE
@@ -15,6 +13,12 @@ npm ci
 NEXT_PUBLIC_URL для локальной сборки не добавляется!
 
 Пример в .example.env
+
+## Необходимо настроить под проект
+ - НАЗВАНИЕ_МОДУЛЯ
+ - поле "name" в package.json
+ - title в файле _app.tsx
+ - счетчики метрики
 
 ## Запуск проекта
 В режиме разработки: 
