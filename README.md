@@ -1,6 +1,10 @@
 # Шаблон модуля
 
 ## Getting started
+Инициализация
+```
+git init .
+```
 Установка 
 ```
 npx create-next-app . -e https://github.com/slonum/create-slonum-app
