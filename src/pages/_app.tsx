@@ -75,6 +75,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
 
       {process.env.NEXT_PUBLIC_NODE !== 'development' && (
         <>
+          <VkPixel />
           <GoogleAnalytics />
           {/* <YandexMetrika id={90262841} /> */}
         </>
