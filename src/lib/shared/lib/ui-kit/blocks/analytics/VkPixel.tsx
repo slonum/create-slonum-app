@@ -1,17 +1,20 @@
-export const VkPixel = () => {
+import Script from 'next/script';
+
+export const VkPixel = ({ id = 'VK-RTRG-1621675-64vfa' }: { id?: string }) => {
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src='https://vk.com/js/api/openapi.js?169',t.onload=function(){VK.Retargeting.Init("VK-RTRG-1621675-64vfa"),VK.Retargeting.Hit()},document.head.appendChild(t)}();
-          `,
+      <Script
+        strategy="afterInteractive"
+        src="https://vk.com/js/api/openapi.js?169"
+        onLoad={() => {
+          VK.Retargeting.Init(id), VK.Retargeting.Hit();
         }}
       />
       <noscript>
         <div>
           {/*eslint-disable-next-line*/}
           <img
-            src="https://vk.com/rtrg?p=VK-RTRG-1621675-64vfa"
+            src={`https://vk.com/rtrg?p=${id}`}
             style={{ position: 'fixed', left: '-999px' }}
             alt=""
           />
